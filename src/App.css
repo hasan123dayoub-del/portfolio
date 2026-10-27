@@ -84,6 +84,22 @@
   padding-block: 96px 72px;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.avatar {
+  flex: none;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
 .eyebrow {
   color: var(--accent);
   font-family: var(--mono);
@@ -384,5 +400,13 @@
 
   .hero {
     padding-block: 64px 48px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
   }
 }

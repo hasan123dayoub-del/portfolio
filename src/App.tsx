@@ -72,6 +72,8 @@ function App() {
 
       <main id="top">
         <section className="hero container">
+          <img className="avatar" src="/avatar.jpg" alt={profile.name} width="160" height="160" />
+          <div className="hero-text">
           <p className="eyebrow">{profile.location}</p>
           <h1>{profile.name}</h1>
           <p className="role">
@@ -90,6 +92,7 @@ function App() {
             <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
+          </div>
           </div>
         </section>
 
