@@ -72,7 +72,7 @@ function App() {
 
       <main id="top">
         <section className="hero container">
-          <img className="avatar" src="/avatar.jpg" alt={profile.name} width="160" height="160" />
+          <img className="avatar" src={`${import.meta.env.BASE_URL}avatar.jpg`} alt={profile.name} width="160" height="160" />
           <div className="hero-text">
           <p className="eyebrow">{profile.location}</p>
           <h1>{profile.name}</h1>
