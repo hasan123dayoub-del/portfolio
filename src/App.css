@@ -63,7 +63,7 @@
   background: var(--accent-bg);
 }
 
-.theme-toggle {
+.icon-btn {
   width: 36px;
   height: 36px;
   flex: none;
@@ -75,7 +75,7 @@
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.icon-btn:hover {
   border-color: var(--accent);
 }
 
@@ -394,10 +394,6 @@
 }
 
 @media (max-width: 720px) {
-  .nav nav {
-    display: none;
-  }
-
   .hero {
     padding-block: 64px 48px;
     flex-direction: column-reverse;
@@ -408,5 +404,232 @@
   .avatar {
     width: 120px;
     height: 120px;
+  }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 30;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Nav extras */
+.nav-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.nav nav a.active {
+  color: var(--text-h);
+  background: var(--accent-bg);
+}
+
+@media (max-width: 720px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 20px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav nav.open {
+    display: flex;
+  }
+
+  .nav nav a {
+    padding: 12px 10px;
+    font-size: 16px;
+  }
+}
+
+/* Reveal on scroll */
+.js [data-reveal]:not(.in) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-reveal] {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Project filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: var(--accent);
+}
+
+.filter.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+/* Contact form */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.contact-grid .contact-list {
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-h);
+  font: inherit;
+  font-weight: 400;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-footer button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-footer button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.form-status {
+  font-size: 14px;
+}
+
+.form-status a {
+  color: var(--accent);
+}
+
+/* Back to top */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-h);
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+@media (max-width: 720px) {
+  .contact-grid,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .to-top {
+    transition: none;
   }
 }
