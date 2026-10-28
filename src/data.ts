@@ -144,6 +144,7 @@ export const projects: Project[] = [
       'Eliminated N+1 queries with eager loading and withCount, cached admin analytics for 10 minutes, and logged request latency through custom middleware.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
+    live: 'https://hirehub-api-dy61.onrender.com/api/projects',
     docs: 'https://github.com/hasan123dayoub-del/HireHub/blob/main/docs/HireHub.postman_collection.json',
   },
   {
