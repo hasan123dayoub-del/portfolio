@@ -329,15 +329,12 @@ function App() {
 
         <section id="contact" className="container section contact" data-reveal>
           <h2>Get in touch</h2>
-          <p className="summary">Open to full-stack opportunities (remote, on-site or relocation). Send me a message or reach me directly.</p>
+          <p className="summary">{profile.availability} Send me a message or reach me directly.</p>
           <div className="contact-grid">
             <ContactForm />
             <ul className="contact-list">
               <li>
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              </li>
-              <li>
-                <a href={`tel:${profile.phone.replace(/\s/g, '')}`}>{profile.phone}</a>
               </li>
               <li>
                 <a href={profile.linkedin} target="_blank" rel="noreferrer">

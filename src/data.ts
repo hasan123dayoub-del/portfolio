@@ -2,10 +2,11 @@
 // After editing, run `npm run update` (regenerates the CV PDF and prints the LinkedIn text), then git push.
 export const profile = {
   name: 'Hasan Samer Dayoub',
-  title: 'Full-Stack Developer',
-  // Used only on the CV (entry-level searches often include "Junior").
-  cvTitle: 'Junior Full-Stack Developer',
-  stack: 'PHP · Laravel · Node.js · React',
+  title: 'Backend-focused Full-Stack Developer',
+  // Used only on the CV.
+  cvTitle: 'Backend-focused Full-Stack Developer',
+  stack: 'Laravel · Node.js · React',
+  availability: 'Available now for part-time work and full-time from Aug 2027 (remote or on-site; open to relocation).',
   location: 'Damascus, Syria',
   email: 'hasan123dayoub@gmail.com',
   phone: '+963 991 328 880',
@@ -16,16 +17,16 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Full-Stack Developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 38 REST endpoints across 2 solo API projects and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 38 REST endpoints across 2 solo API projects and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior Full-Stack Developer with 13 months of project-based training in Laravel and Node.js/React. Built 38 REST endpoints across 2 solo API projects (HireHub, NewsRoom) and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior full-stack role (open to remote, on-site or relocation).',
+    'Junior backend-focused full-stack developer with 13 months of project-based training in Laravel and Node.js/React. Built 38 REST endpoints across 2 solo API projects (HireHub, NewsRoom) and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
   { value: '38', label: 'endpoints built in solo API projects' },
   { value: '6', label: 'projects (2 solo, 4 team)' },
   { value: '13 mo', label: 'project-based training' },
-  { value: '3', label: 'certifications' },
+  { value: '2', label: 'certified internship levels' },
 ]
 
 export const skills = [
@@ -54,7 +55,7 @@ export const experience = [
     period: 'Aug 2026 – Present',
     points: [
       'Training across 3 parallel tracks: full-stack development (JavaScript, Node.js, Express.js, React), Soft Skills and Business, and English.',
-      'Co-developed the Institute Management System (see Projects) with a team of 3: 34 REST endpoints consumed by a 13-page React dashboard.',
+      'Co-developed the Institute Management System (see Projects) with a team of 3: a Node.js REST API consumed by a 13-page React dashboard.',
     ],
   },
   {
@@ -64,8 +65,8 @@ export const experience = [
     period: 'Sep 2025 – Aug 2026',
     points: [
       'Completed two 4-month remote backend internship tracks, Level 1 (Sep 2025 – Jan 2026) and Level 2 (Mar – Jul 2026), building production-style Laravel APIs against real business requirements.',
-      'Worked on 3 Laravel APIs (60+ REST endpoints in total), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
-      'Collaborated in teams of 2–3 developers via Git and GitHub, documenting all 3 APIs with Postman collections.',
+      'Built 5 Laravel projects: HireHub and NewsRoom (solo), LazyRoom, Alumni Network and Property Management System (team), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
+      'Collaborated in teams through Git and GitHub (personal and feature branches, pull requests) and documented the APIs with Postman collections.',
     ],
   },
 ]
@@ -90,7 +91,7 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Express 5', 'MongoDB', 'React 19', 'Tailwind CSS'],
     points: [
       'Developed an academy platform for 4 roles (admin, secretary, teacher, student) with JWT authentication, Zod validation and MongoDB transactions for multi-document updates.',
-      'Automated course closing and student promotion with node-cron jobs, verified by 14 unit tests, and built analytics dashboards with Recharts.',
+      'Automated course closing and student promotion with node-cron jobs, covered by unit tests, and built analytics dashboards with Recharts.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
   },
@@ -110,7 +111,7 @@ export const projects: Project[] = [
     date: 'May 2026',
     tech: ['Laravel 12', 'Sanctum', 'MySQL'],
     points: [
-      'Implemented the order, wallet and admin modules of a 26-endpoint marketplace API, securing payments with database transactions and pessimistic locking to prevent double payments.',
+      'Implemented the order, wallet and admin modules of a multi-vendor marketplace API, keeping wallet payments safe under concurrency with database transactions and row locking (pessimistic locking) to prevent double charges.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/LazyRoom',
   },
@@ -121,10 +122,10 @@ export const projects: Project[] = [
     date: 'May 2026',
     tech: ['Laravel 11', 'Sanctum', 'Redis', 'MySQL'],
     points: [
-      'Engineered 17 endpoints across 2 API versions (web and mobile), decoupled through repository interfaces and contextual binding in the Service Container.',
+      'Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.',
       'Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
     ],
-    repo: 'https://github.com/hasan123dayoub-del/NewsRooom',
+    repo: 'https://github.com/hasan123dayoub-del/NewsRoom',
   },
   {
     name: 'HireHub',
@@ -133,7 +134,7 @@ export const projects: Project[] = [
     date: 'Apr 2026',
     tech: ['Laravel 12', 'MySQL', 'Sanctum', 'Events'],
     points: [
-      'Architected a 21-endpoint API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).',
+      'Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).',
       'Eliminated N+1 queries with eager loading and withCount, cached admin analytics for 10 minutes, and logged request latency through custom middleware.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
@@ -149,17 +150,15 @@ export const projects: Project[] = [
   },
 ]
 
-// Dates are as printed on the certificates. Level 1 is left empty: it is printed as Dec 2024, which conflicts with the focal X start date (Sep 2025).
+// Dates are as printed on the certificates. Level 1 is left empty until focal X corrects the printed year.
 export const certifications = [
   {
-    name: 'Professional Program in Web Development',
-    detail: 'Passed with Distinction (55 hours, Mar – Jul 2026) · American Institute for Applied Education (AIAE), CertiPro · Authorized Training Center: focal X',
-    date: 'Jul 2026',
-    credential: 'TPCSY26-0000104603',
+    name: 'focal X Backend Internship, Levels 1 & 2',
+    detail: 'Two 4-month tracks · certified by the American Institute for Applied Education (AIAE, CertiPro), Passed with Distinction',
+    date: 'Aug 2026',
+    credential: 'Level 2: CERT-10-UI-3069 · Level 1: 9PED0SS3Z08 · AIAE: TPCSY26-0000104603',
     verify: 'aiae.us/verification',
   },
-  { name: 'Web Development, Back-end Level 2', detail: 'focal X · 4-month internship program', date: 'Aug 2026', credential: 'CERT-10-UI-3069', verify: '' },
-  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: '', credential: '9PED0SS3Z08', verify: '' },
 ]
 
 export const education = {

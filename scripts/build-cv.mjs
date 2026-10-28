@@ -95,7 +95,7 @@ const html = `<!doctype html>
       .map(
         (c) => `<div class="item">
       <div class="row"><span><b>${esc(c.name)}</b></span>${c.date ? `<span class="date">${esc(c.date)}</span>` : ''}</div>
-      <div class="small">${esc(pipes(c.detail))}${c.credential ? ` | Credential ID ${esc(c.credential)}` : ''}${c.verify ? ` (verify: ${esc(c.verify)})` : ''}</div>
+      <div class="small">${esc(pipes(c.detail))}${c.credential ? ` | Credential ${c.credential.includes(':') ? 'IDs' : 'ID'} ${esc(c.credential)}` : ''}${c.verify ? ` (verify: ${esc(c.verify)})` : ''}</div>
     </div>`,
       )
       .join('\n    ')}
