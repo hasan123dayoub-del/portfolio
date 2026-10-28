@@ -9,7 +9,7 @@ export const profile = {
   github: 'https://github.com/hasan123dayoub-del',
   // Public Web3Forms access key (safe to expose, it only allows sending to the owner's inbox).
   // Leave empty to fall back to opening the visitor's mail app.
-  contactAccessKey: '',
+  contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
     'Full-Stack Developer with one year of project-based training, working across PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I have designed 95+ RESTful API endpoints across 6 projects using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated testing, and built React dashboards on top of them. Currently training at Bytes4Future (Aga Khan Foundation).',
 }
