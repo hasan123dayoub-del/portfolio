@@ -149,7 +149,7 @@ export const projects: Project[] = [
   },
 ]
 
-// Dates are exactly as printed on the certificates.
+// Dates are as printed on the certificates. Level 1 is left empty: it is printed as Dec 2024, which conflicts with the focal X start date (Sep 2025).
 export const certifications = [
   {
     name: 'Professional Program in Web Development',
@@ -159,7 +159,7 @@ export const certifications = [
     verify: 'aiae.us/verification',
   },
   { name: 'Web Development, Back-end Level 2', detail: 'focal X · 4-month internship program', date: 'Aug 2026', credential: 'CERT-10-UI-3069', verify: '' },
-  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: 'Dec 2024', credential: '9PED0SS3Z08', verify: '' },
+  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: '', credential: '9PED0SS3Z08', verify: '' },
 ]
 
 export const education = {
