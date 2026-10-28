@@ -7,6 +7,9 @@ export const profile = {
   phone: '+963 991 328 880',
   linkedin: 'https://linkedin.com/in/hasan-dayoub-297ba4420',
   github: 'https://github.com/hasan123dayoub-del',
+  // Public Web3Forms access key (safe to expose, it only allows sending to the owner's inbox).
+  // Leave empty to fall back to opening the visitor's mail app.
+  contactAccessKey: '',
   summary:
     'Full-Stack Developer with one year of project-based training, working across PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I have designed 95+ RESTful API endpoints across 6 projects using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated testing, and built React dashboards on top of them. Currently training at Bytes4Future (Aga Khan Foundation).',
 }

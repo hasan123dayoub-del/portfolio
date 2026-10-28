@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { profile } from '../data'
 
-type Status = 'idle' | 'sending' | 'sent' | 'error'
+type Status = 'idle' | 'sending' | 'sent' | 'error' | 'mailto'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
@@ -13,23 +13,35 @@ export default function ContactForm() {
     const data = new FormData(form)
     if (data.get('_honey')) return // bots fill the hidden field
 
+    const name = String(data.get('name'))
+    const email = String(data.get('email'))
+    const message = String(data.get('message'))
+
+    // No form service configured: open the visitor's mail app with the message prefilled.
+    if (!profile.contactAccessKey) {
+      const subject = encodeURIComponent(`Portfolio message from ${name}`)
+      const body = encodeURIComponent(`${message}\n\n${name}\n${email}`)
+      window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+      setStatus('mailto')
+      return
+    }
+
     setStatus('sending')
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-          message: data.get('message'),
-          _subject: `Portfolio message from ${data.get('name')}`,
-          _replyto: data.get('email'),
-          _template: 'table',
-          _captcha: 'false',
+          access_key: profile.contactAccessKey,
+          subject: `Portfolio message from ${name}`,
+          from_name: name,
+          name,
+          email,
+          message,
         }),
       })
       const json = await res.json()
-      if (!res.ok || json.success === 'false' || json.success === false) throw new Error('failed')
+      if (!res.ok || !json.success) throw new Error('failed')
       form.reset()
       setStatus('sent')
     } catch {
@@ -60,6 +72,7 @@ export default function ContactForm() {
         </button>
         <p className="form-status" role="status" aria-live="polite">
           {status === 'sent' && 'Thanks! Your message was sent, I will get back to you soon.'}
+          {status === 'mailto' && 'Your mail app should open with the message ready to send.'}
           {status === 'error' && (
             <>
               Something went wrong. Please email me directly at <a href={`mailto:${profile.email}`}>{profile.email}</a>.
