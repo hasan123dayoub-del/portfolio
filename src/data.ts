@@ -17,13 +17,13 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 64 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 66 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior backend-focused full-stack developer with 13 months of project-based training in Laravel and Node.js/React. Built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 64 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 13 months of project-based training in Laravel and Node.js/React. Built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 66 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
-  { value: '64', label: 'REST endpoints I built on my own' },
+  { value: '66', label: 'REST endpoints I built on my own' },
   { value: '6', label: 'projects (3 APIs built solo)' },
   { value: '13 mo', label: 'project-based training' },
   { value: '2', label: 'certified internship levels' },
