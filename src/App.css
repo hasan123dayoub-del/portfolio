@@ -633,3 +633,27 @@
     transition: none;
   }
 }
+
+/* Currently learning */
+.learning-title {
+  margin: 32px 0 12px;
+  font-size: 17px;
+}
+
+.learning {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.learning li {
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  background: var(--accent-bg);
+  font-size: 14px;
+}

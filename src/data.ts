@@ -1,3 +1,5 @@
+// Single source of truth: the website and the CV are both generated from this file.
+// After editing, run `npm run update` (regenerates the CV PDF and prints the LinkedIn text), then git push.
 export const profile = {
   name: 'Hasan Samer Dayoub',
   title: 'Full-Stack Developer',
@@ -7,6 +9,7 @@ export const profile = {
   phone: '+963 991 328 880',
   linkedin: 'https://linkedin.com/in/hasan-dayoub-297ba4420',
   github: 'https://github.com/hasan123dayoub-del',
+  site: 'https://hasan123dayoub-del.github.io/portfolio/',
   // Public Web3Forms access key (safe to expose, it only allows sending to the owner's inbox).
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
@@ -34,6 +37,14 @@ export const skills = [
     group: 'Testing & Tools',
     items: ['Pest', 'PHPUnit', 'Unit testing', 'Postman', 'Git', 'GitHub', 'GitHub Actions', 'Docker'],
   },
+  { group: 'Soft Skills', items: ['Teamwork', 'Communication', 'Technical documentation'] },
+]
+
+// What you are learning right now. Add one line per topic, newest first.
+export const learning = [
+  { topic: 'Java', since: 'Aug 2026', note: 'Bytes4Future full-stack track' },
+  { topic: 'React & Node.js', since: 'Aug 2026', note: 'Full-stack JavaScript' },
+  { topic: 'English', since: 'Aug 2026', note: 'Bytes4Future English track' },
 ]
 
 export const experience = [
@@ -58,6 +69,7 @@ export const experience = [
   },
 ]
 
+// Add new projects at the TOP of the list (newest first). The LinkedIn helper prints the first one.
 export interface Project {
   name: string;
   subtitle: string;
@@ -134,9 +146,10 @@ export const certifications = [
     name: 'Professional Program in Web Development',
     detail: 'Passed with Distinction (55 hours) · American Institute for Applied Education (AIAE), CertiPro · Authorized Training Center: focal X',
     date: 'Jul 2026',
+    credential: 'TPCSY26-0000104603',
   },
-  { name: 'Web Development, Back-end Level 2', detail: 'focal X · 4-month internship program', date: 'Aug 2026' },
-  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: '' },
+  { name: 'Web Development, Back-end Level 2', detail: 'focal X · 4-month internship program', date: 'Aug 2026', credential: 'CERT-10-UI-3069' },
+  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: '', credential: '9PED0SS3Z08' },
 ]
 
 export const education = {

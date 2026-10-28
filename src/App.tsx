@@ -6,6 +6,7 @@ import {
   education,
   experience,
   languages,
+  learning,
   profile,
   projects,
   skills,
@@ -215,6 +216,17 @@ function App() {
               </div>
             ))}
           </div>
+          <h3 className="learning-title">Currently learning</h3>
+          <ul className="learning">
+            {learning.map((l) => (
+              <li key={l.topic}>
+                <span className="strong">{l.topic}</span>
+                <span className="muted">
+                  {l.note} · since {l.since}
+                </span>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="experience" className="container section" data-reveal>
