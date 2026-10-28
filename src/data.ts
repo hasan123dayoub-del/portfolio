@@ -82,6 +82,8 @@ export interface Project {
   repo: string;
   live?: string;
   docs?: string;
+  // Screenshot under public/, e.g. 'projects/name.jpg' (1280x800).
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -96,6 +98,7 @@ export const projects: Project[] = [
       'Automated course closing and student promotion with node-cron jobs, covered by unit tests, and built analytics dashboards with Recharts.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
+    image: 'projects/institute-admin.jpg',
   },
   {
     name: 'Alumni Network',

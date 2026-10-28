@@ -287,6 +287,7 @@
   display: grid;
   gap: 8px;
   flex: 1;
+  align-content: start;
 }
 
 .link {
@@ -662,4 +663,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
+}
+
+.project-shot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }

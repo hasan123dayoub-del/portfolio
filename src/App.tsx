@@ -267,6 +267,18 @@ function App() {
           <div className="grid projects">
             {visibleProjects.map((p) => (
               <article className="card project" key={p.name}>
+                {p.image && (
+                  <a href={`${import.meta.env.BASE_URL}${p.image}`} target="_blank" rel="noreferrer">
+                    <img
+                      className="project-shot"
+                      src={`${import.meta.env.BASE_URL}${p.image}`}
+                      alt={`${p.name} screenshot`}
+                      width="1280"
+                      height="800"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
                 <div className="row">
                   <h3>{p.name}</h3>
                   <span className="badge">{p.kind}</span>
