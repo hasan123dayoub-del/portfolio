@@ -99,6 +99,7 @@ export const projects: Project[] = [
     ],
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
     image: 'projects/institute-admin.jpg',
+    live: 'https://institute-dashboard-gnsa.onrender.com',
   },
   {
     name: 'Alumni Network',
