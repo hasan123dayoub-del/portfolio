@@ -63,7 +63,7 @@ export const experience = [
     mode: 'Remote',
     period: 'Sep 2025 – Aug 2026',
     points: [
-      'Completed two 4-month remote backend internship tracks (Level 1 and Level 2), building production-style Laravel APIs against real business requirements.',
+      'Completed two 4-month remote backend internship tracks, Level 1 (Sep 2025 – Jan 2026) and Level 2 (Apr – Aug 2026), building production-style Laravel APIs against real business requirements.',
       'Worked on 3 Laravel APIs (60+ REST endpoints in total), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
       'Collaborated in teams of 2–3 developers via Git and GitHub, documenting all 3 APIs with Postman collections.',
     ],
