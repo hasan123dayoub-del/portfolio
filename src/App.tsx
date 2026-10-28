@@ -236,7 +236,7 @@ function App() {
               <article key={e.role + e.company} className="timeline-item">
                 <div className="row">
                   <h3>
-                    {e.role} <span className="muted">· {e.company}</span>
+                    {e.role} <span className="muted">· {e.company} · {e.mode}</span>
                   </h3>
                   <span className="date">{e.period}</span>
                 </div>
@@ -272,7 +272,9 @@ function App() {
                   <h3>{p.name}</h3>
                   <span className="badge">{p.kind}</span>
                 </div>
-                <p className="muted subtitle">{p.subtitle}</p>
+                <p className="muted subtitle">
+                  {p.subtitle} · {p.date}
+                </p>
                 <ul className="chips small">
                   {p.tech.map((t) => (
                     <li key={t}>{t}</li>
