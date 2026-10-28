@@ -13,7 +13,6 @@ import {
   profile,
   projects,
   skills,
-  volunteering,
 } from '../src/data.ts'
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -105,9 +104,6 @@ const html = `<!doctype html>
     <div class="row"><span><b>${esc(education.degree)}</b></span><span class="date">${esc(education.period)}</span></div>
     <div class="small">${esc(education.school)}</div>
 
-    <h2>Volunteering</h2>
-    <div class="row"><span><b>${esc(volunteering.role.split(' · ')[0])}</b> | ${esc(volunteering.role.split(' · ')[1] ?? '')}</span><span class="date">${esc(volunteering.period)}</span></div>
-    <ul><li>${esc(volunteering.text)}</li></ul>
 
     <h2>Languages</h2>
     <p>${languages.map((l) => `<b>${esc(l.name)}:</b> ${esc(l.level)}`).join(' &nbsp;|&nbsp; ')}</p>

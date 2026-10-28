@@ -18,7 +18,7 @@ export const profile = {
   summary:
     'Full-Stack Developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 38 REST endpoints across 2 solo API projects and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior Full-Stack Developer with 13 months of project-based training in Laravel and Node.js/React. Built 38 REST endpoints across 2 solo API projects (HireHub, NewsRoom) and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior full-stack role.',
+    'Junior Full-Stack Developer with 13 months of project-based training in Laravel and Node.js/React. Built 38 REST endpoints across 2 solo API projects (HireHub, NewsRoom) and contributed to 4 team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior full-stack role (open to remote, on-site or relocation).',
 }
 
 export const stats = [
@@ -149,7 +149,7 @@ export const projects: Project[] = [
   },
 ]
 
-// Dates are as printed on the certificates. Leave `date` empty when it needs confirming.
+// Dates are exactly as printed on the certificates.
 export const certifications = [
   {
     name: 'Professional Program in Web Development',
@@ -159,7 +159,7 @@ export const certifications = [
     verify: 'aiae.us/verification',
   },
   { name: 'Web Development, Back-end Level 2', detail: 'focal X · 4-month internship program', date: 'Aug 2026', credential: 'CERT-10-UI-3069', verify: '' },
-  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: '', credential: '9PED0SS3Z08', verify: '' },
+  { name: 'Web Development, Back-end Level 1', detail: 'focal X · 4-month internship program', date: 'Dec 2024', credential: '9PED0SS3Z08', verify: '' },
 ]
 
 export const education = {
@@ -168,13 +168,7 @@ export const education = {
   period: '2022 – 2027 (expected)',
 }
 
-export const volunteering = {
-  role: 'Youth Volunteer · United Nations (UN)',
-  period: '2020 – 2022',
-  text: 'Co-organized community activities for people with special needs, food-distribution drives and awareness theater performances over 2 years.',
-}
-
 export const languages = [
   { name: 'Arabic', level: 'Native' },
-  { name: 'English', level: 'Elementary, actively improving through the Bytes4Future English track' },
+  { name: 'English', level: 'B1, actively improving through the Bytes4Future English track' },
 ]

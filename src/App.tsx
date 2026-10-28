@@ -11,7 +11,6 @@ import {
   projects,
   skills,
   stats,
-  volunteering,
 } from './data'
 
 type Theme = 'light' | 'dark'
@@ -302,11 +301,6 @@ function App() {
               <p className="muted">
                 {education.school} · {education.period}
               </p>
-              <h3 className="gap">Volunteering</h3>
-              <p className="strong">
-                {volunteering.role} <span className="muted">· {volunteering.period}</span>
-              </p>
-              <p className="muted">{volunteering.text}</p>
               <h3 className="gap">Languages</h3>
               <ul className="plain">
                 {languages.map((l) => (
@@ -335,7 +329,7 @@ function App() {
 
         <section id="contact" className="container section contact" data-reveal>
           <h2>Get in touch</h2>
-          <p className="summary">Open to full-stack opportunities. Send me a message or reach me directly.</p>
+          <p className="summary">Open to full-stack opportunities (remote, on-site or relocation). Send me a message or reach me directly.</p>
           <div className="contact-grid">
             <ContactForm />
             <ul className="contact-list">
