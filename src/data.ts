@@ -153,7 +153,10 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'Dec 2025 – Jan 2026',
     tech: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
-    points: ['Created booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.'],
+    points: [
+      'Team: booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.',
+      'My part: admin user management (create employees, change roles, activate and deactivate accounts), employee-to-customer booking messages, customer ratings, and property and booking reports.',
+    ],
     repo: 'https://github.com/hasan123dayoub-del/property-management',
   },
 ]
