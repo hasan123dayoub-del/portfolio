@@ -1,7 +1,7 @@
 // Generates cv/cv.html and the CV PDF from src/data.ts, so the CV never drifts from the website.
 // PDF printing uses an installed Edge/Chrome (override with BROWSER_PATH).
 import { execFileSync } from 'node:child_process'
-import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -22,9 +22,9 @@ const pipes = (s) => s.replaceAll(' · ', ' | ')
 const lines = (arr) => `<ul>${arr.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`
 
 const css = `
-      @page { size: A4; margin: 14mm 15mm; }
+      @page { size: A4; margin: 12mm 14mm; }
       * { box-sizing: border-box; }
-      body { margin: 0; font: 10.2pt/1.45 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+      body { margin: 0; font: 10pt/1.42 'Segoe UI', Arial, sans-serif; color: #1f2937; }
       h1 { margin: 0; font-size: 26pt; color: #0f172a; letter-spacing: -0.5px; }
       .title { margin: 4px 0 8px; font-size: 12pt; font-weight: 600; color: #0e7490; }
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
@@ -128,10 +128,21 @@ const candidates = [
 const browser = candidates.find((p) => existsSync(p))
 if (!browser) throw new Error('No Edge/Chrome found. Set BROWSER_PATH to a browser executable.')
 
+rmSync(pdfPath, { force: true })
 execFileSync(browser, ['--headless', '--disable-gpu', '--no-pdf-header-footer', `--print-to-pdf=${pdfPath}`, pathToFileURL(htmlPath).href], {
   stdio: 'ignore',
 })
-console.log(`CV written: ${pdfPath}`)
+
+// The browser can return before the PDF is fully written; wait until the file exists and its size settles.
+let size = -1
+for (let i = 0; i < 100; i++) {
+  const now = existsSync(pdfPath) ? statSync(pdfPath).size : -1
+  if (now > 0 && now === size) break
+  size = now
+  await new Promise((r) => setTimeout(r, 200))
+}
+const pages = readFileSync(pdfPath, 'latin1').match(/\/Count (\d+)/)?.[1] ?? '?'
+console.log(`CV written: ${pdfPath} (${pages} pages)`)
 
 // Keep a personal copy in Documents, if that folder exists.
 const docs = join(homedir(), 'Documents')
