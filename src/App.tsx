@@ -169,7 +169,7 @@ function App() {
               {profile.title} <span className="muted">| {profile.stack}</span>
             </p>
             <p className="lead">
-              I build clean, well-tested REST APIs with Laravel and Node.js, and I'm growing into full-stack JavaScript.
+              I build clean, well-tested REST APIs with Laravel and Node.js, and React interfaces on top of them.
             </p>
             <div className="actions">
               <a className="btn primary" href="#projects">
@@ -321,7 +321,7 @@ function App() {
 
         <section id="contact" className="container section contact" data-reveal>
           <h2>Get in touch</h2>
-          <p className="summary">Open to junior backend and full-stack opportunities. Send me a message or reach me directly.</p>
+          <p className="summary">Open to full-stack opportunities. Send me a message or reach me directly.</p>
           <div className="contact-grid">
             <ContactForm />
             <ul className="contact-list">

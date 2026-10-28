@@ -1,14 +1,14 @@
 export const profile = {
   name: 'Hasan Samer Dayoub',
-  title: 'Junior Backend Developer',
-  stack: 'PHP · Laravel · Node.js',
+  title: 'Full-Stack Developer',
+  stack: 'PHP · Laravel · Node.js · React',
   location: 'Damascus, Syria',
   email: 'hasan123dayoub@gmail.com',
   phone: '+963 991 328 880',
   linkedin: 'https://linkedin.com/in/hasan-dayoub-297ba4420',
   github: 'https://github.com/hasan123dayoub-del',
   summary:
-    'Junior Backend Developer specializing in PHP and Laravel, with one year of project-based training. I have designed 95+ RESTful API endpoints across 6 projects using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated testing. Currently expanding into full-stack JavaScript (Node.js, Express, React, MongoDB) at Bytes4Future (Aga Khan Foundation).',
+    'Full-Stack Developer with one year of project-based training, working across PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I have designed 95+ RESTful API endpoints across 6 projects using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated testing, and built React dashboards on top of them. Currently training at Bytes4Future (Aga Khan Foundation).',
 }
 
 export const stats = [
@@ -110,7 +110,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Alumni Network',
-    subtitle: 'Backend API',
+    subtitle: 'REST API',
     kind: 'Team',
     tech: ['Laravel', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
     points: ['Owned the notifications module: domain events, queued jobs and real-time Pusher delivery, covered by Pest tests.'],
