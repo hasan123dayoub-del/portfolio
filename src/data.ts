@@ -89,9 +89,8 @@ export const projects: Project[] = [
     date: 'Oct 2026',
     tech: ['Node.js', 'Express 5', 'MongoDB', 'React 19', 'Tailwind CSS'],
     points: [
-      'My part: the frontend foundation (light/dark theme, auth, API client, role-based layouts and routes), the dashboard and secretary pages, plus backend fixes (auth, middleware, model constraints) and the services layer.',
-      'Team: academy platform for 4 roles (admin, secretary, teacher, student) with JWT authentication, Zod validation and MongoDB transactions for multi-document updates.',
-      'Team: course closing and student promotion automated with node-cron jobs and verified by 14 unit tests, with analytics dashboards built in Recharts.',
+      'Developed an academy platform for 4 roles (admin, secretary, teacher, student) with JWT authentication, Zod validation and MongoDB transactions for multi-document updates.',
+      'Automated course closing and student promotion with node-cron jobs, verified by 14 unit tests, and built analytics dashboards with Recharts.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
   },
@@ -101,10 +100,7 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'Jul – Aug 2026',
     tech: ['Laravel', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
-    points: [
-      'Built three modules: university events (CRUD, registration, attendance, reminders), notifications (endpoints, queued jobs, real-time Pusher delivery) and password reset/change.',
-      'Covered the events and notifications modules with Pest feature tests.',
-    ],
+    points: ['Owned the notifications module: domain events, queued jobs and real-time Pusher delivery, covered by Pest tests.'],
     repo: 'https://github.com/hasan123dayoub-del/Alumni-Network',
   },
   {
@@ -148,10 +144,7 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'Dec 2025 – Jan 2026',
     tech: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
-    points: [
-      'Created booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.',
-      'My part includes property reports, employee-to-customer communication, and optimizing the auth and review modules (ReviewResource).',
-    ],
+    points: ['Created booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.'],
     repo: 'https://github.com/hasan123dayoub-del/property-management',
   },
 ]
