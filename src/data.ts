@@ -38,7 +38,7 @@ export const skills = [
   { group: 'Security', items: ['Laravel Sanctum', 'JWT', 'RBAC', 'Policies', 'Form Request', 'Zod'] },
   { group: 'Databases', items: ['MySQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Transactions'] },
   { group: 'Frontend', items: ['JavaScript (ES6+)', 'React', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
-  { group: 'Testing & Tools', items: ['Pest', 'PHPUnit', 'Unit testing', 'Postman', 'Git', 'GitHub'] },
+  { group: 'Testing & Tools', items: ['Pest', 'PHPUnit', 'Unit testing', 'Postman', 'Git', 'GitHub', 'GitHub Actions (CI)'] },
 ]
 
 // What you are learning right now. Add one line per topic, newest first.
