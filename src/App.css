@@ -657,3 +657,9 @@
   background: var(--accent-bg);
   font-size: 14px;
 }
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}

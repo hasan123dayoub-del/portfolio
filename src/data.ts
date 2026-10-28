@@ -80,6 +80,8 @@ export interface Project {
   tech: string[];
   points: string[];
   repo: string;
+  live?: string;
+  docs?: string;
 }
 
 export const projects: Project[] = [
@@ -106,6 +108,7 @@ export const projects: Project[] = [
       'Covered the events, notifications and password features with Pest feature tests.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Alumni-Network',
+    docs: 'https://nity0i8ngr.apidog.io',
   },
   {
     name: 'LazyRoom',
@@ -141,6 +144,7 @@ export const projects: Project[] = [
       'Eliminated N+1 queries with eager loading and withCount, cached admin analytics for 10 minutes, and logged request latency through custom middleware.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
+    docs: 'https://github.com/hasan123dayoub-del/HireHub/blob/main/docs/HireHub.postman_collection.json',
   },
   {
     name: 'Property Management System',

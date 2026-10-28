@@ -284,9 +284,21 @@ function App() {
                     <li key={pt}>{pt}</li>
                   ))}
                 </ul>
-                <a className="link" href={p.repo} target="_blank" rel="noreferrer">
-                  View on GitHub →
-                </a>
+                <div className="project-links">
+                  {p.live && (
+                    <a className="link" href={p.live} target="_blank" rel="noreferrer">
+                      Live demo ↗
+                    </a>
+                  )}
+                  {p.docs && (
+                    <a className="link" href={p.docs} target="_blank" rel="noreferrer">
+                      API docs ↗
+                    </a>
+                  )}
+                  <a className="link" href={p.repo} target="_blank" rel="noreferrer">
+                    View on GitHub →
+                  </a>
+                </div>
               </article>
             ))}
           </div>

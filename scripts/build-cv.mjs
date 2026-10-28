@@ -84,7 +84,7 @@ const html = `<!doctype html>
       .map(
         (p) => `<div class="item">
       <div class="row"><h3><b>${esc(p.name)} | ${esc(p.subtitle)}</b> (${esc(p.kind)})</h3><span class="date">${esc(p.date)}</span></div>
-      <div class="tech">${esc(p.tech.join(', '))} | ${esc(bare(p.repo))}</div>
+      <div class="tech">${esc(p.tech.join(', '))} | ${esc(bare(p.repo))}${p.live ? ` | Live: ${esc(bare(p.live))}` : ''}${p.docs && !p.docs.includes('github.com') ? ` | API docs: ${esc(bare(p.docs))}` : ''}</div>
       ${lines(p.points)}
     </div>`,
       )
