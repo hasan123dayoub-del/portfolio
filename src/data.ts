@@ -121,7 +121,7 @@ export const projects: Project[] = [
     date: 'May 2026',
     tech: ['Laravel 12', 'Sanctum', 'MySQL'],
     points: [
-      'Built the entire backend on my own: customers, suppliers and admins, an order state machine, and wallet payments kept safe under concurrency with database transactions and row locking (pessimistic locking) to prevent double charges.',
+      'Built the entire backend on my own: customers, suppliers and admins, an order state machine, and wallet payments kept safe under concurrency with database transactions and row locking (pessimistic locking); measured with 20 parallel requests on one order (charged once) and 50 parallel requests across orders (never overdrawn).',
     ],
     repo: 'https://github.com/hasan123dayoub-del/LazyRoom',
   },
