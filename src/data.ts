@@ -144,7 +144,7 @@ export const projects: Project[] = [
     tech: ['Laravel 12', 'MySQL', 'Sanctum', 'Events'],
     points: [
       'Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).',
-      'Eliminated N+1 queries with eager loading and withCount, cached admin analytics for 10 minutes, and logged request latency through custom middleware.',
+      'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount; cached admin analytics for 10 minutes and logged request latency through custom middleware.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
     live: 'https://hirehub-api-dy61.onrender.com/api/projects',
