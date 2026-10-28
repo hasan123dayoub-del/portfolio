@@ -12,7 +12,9 @@
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
       .contact span + span::before { content: '|'; margin: 0 8px; color: #94a3b8; }
       header { padding-bottom: 10px; border-bottom: 3px solid #0f172a; }
-      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 9pt; letter-spacing: 2px; text-transform: uppercase; color: #0f172a; }
+      /* Plain, unspaced heading text so ATS parsers read each section name as a word. */
+      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
+      h3 { margin: 0; font-size: 10.2pt; font-weight: 400; color: #0f172a; }
       p { margin: 0 0 4px; }
       ul { margin: 3px 0 8px; padding-left: 16px; }
       li { margin-bottom: 2px; }
@@ -50,42 +52,42 @@
 
     <h2>Professional Experience</h2>
     <div class="item">
-      <div class="row"><span><b>Full-Stack Developer Trainee</b> | Bytes4Future, Aga Khan Foundation (AKF)</span><span class="date">Aug 2026 – Present</span></div>
+      <div class="row"><h3><b>Full-Stack Developer Trainee</b> | Bytes4Future, Aga Khan Foundation (AKF)</h3><span class="date">Aug 2026 – Present</span></div>
       <ul><li>Training across 3 parallel tracks: full-stack development (JavaScript, Node.js, Express.js, React, Java), Soft Skills and Business, and English.</li><li>Co-developed a full-stack academy platform with a team of 3, exposing 34 REST endpoints consumed by a 13-page React dashboard.</li></ul>
     </div>
     <div class="item">
-      <div class="row"><span><b>Backend Developer Trainee</b> | focal X</span><span class="date">Sep 2025 – Aug 2026</span></div>
+      <div class="row"><h3><b>Backend Developer Trainee</b> | focal X</h3><span class="date">Sep 2025 – Aug 2026</span></div>
       <ul><li>Completed two 4-month backend internship tracks (Level 1 and Level 2), building production-style Laravel APIs against real business requirements.</li><li>Shipped 60+ REST endpoints across 3 Laravel APIs, applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.</li><li>Collaborated in teams of 2–3 developers via Git and GitHub, documenting all 3 APIs with Postman collections.</li></ul>
     </div>
 
     <h2>Selected Projects</h2>
     <div class="item">
-      <b>HireHub | Freelance Marketplace API</b> (Individual)
+      <h3><b>HireHub | Freelance Marketplace API</b> (Individual)</h3>
       <div class="tech">Laravel 12, MySQL, Sanctum, Events | github.com/hasan123dayoub-del/HireHub</div>
       <ul><li>Architected a 21-endpoint API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow following the Open/Closed principle.</li><li>Eliminated N+1 queries with eager loading and withCount, cached admin analytics for 10 minutes, and logged request latency through custom middleware.</li></ul>
     </div>
     <div class="item">
-      <b>NewsRoom | Headless CMS API</b> (Individual)
+      <h3><b>NewsRoom | Headless CMS API</b> (Individual)</h3>
       <div class="tech">Laravel 11, Sanctum, Redis, MySQL | github.com/hasan123dayoub-del/NewsRooom</div>
       <ul><li>Engineered 17 endpoints across 2 API versions (web and mobile), decoupled through repository interfaces and contextual binding in the Service Container.</li><li>Prevented cache stampedes with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.</li></ul>
     </div>
     <div class="item">
-      <b>Institute Management System | Full-Stack Platform</b> (Team of 3)
+      <h3><b>Institute Management System | Full-Stack Platform</b> (Team of 3)</h3>
       <div class="tech">Node.js, Express 5, MongoDB, React 19, Tailwind CSS | github.com/hasan123dayoub-del/Institute-Management-System</div>
       <ul><li>Developed an academy platform for 4 roles (admin, secretary, teacher, student) with JWT authentication, Zod validation and MongoDB transactions for multi-document updates.</li><li>Automated course closing and student promotion with node-cron jobs, verified by 14 unit tests, and built analytics dashboards with Recharts.</li></ul>
     </div>
     <div class="item">
-      <b>LazyRoom | Multi-Vendor Ordering API</b> (Team)
+      <h3><b>LazyRoom | Multi-Vendor Ordering API</b> (Team)</h3>
       <div class="tech">Laravel 12, Sanctum, MySQL | github.com/hasan123dayoub-del/LazyRoom</div>
       <ul><li>Implemented the order, wallet and admin modules of a 26-endpoint marketplace API, securing payments with transactions and pessimistic locking to prevent double-spending.</li></ul>
     </div>
     <div class="item">
-      <b>Alumni Network | REST API</b> (Team)
+      <h3><b>Alumni Network | REST API</b> (Team)</h3>
       <div class="tech">Laravel, Sanctum, Pusher, Redis, Pest | github.com/hasan123dayoub-del/Alumni-Network</div>
       <ul><li>Owned the notifications module: domain events, queued jobs and real-time Pusher delivery, covered by Pest tests.</li></ul>
     </div>
     <div class="item">
-      <b>Property Management System | Booking Platform</b> (Team)
+      <h3><b>Property Management System | Booking Platform</b> (Team)</h3>
       <div class="tech">Laravel, Blade, Tailwind CSS, MySQL | github.com/hasan123dayoub-del/property-management</div>
       <ul><li>Created booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.</li></ul>
     </div>

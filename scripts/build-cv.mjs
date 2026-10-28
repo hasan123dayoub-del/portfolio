@@ -31,7 +31,9 @@ const css = `
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
       .contact span + span::before { content: '|'; margin: 0 8px; color: #94a3b8; }
       header { padding-bottom: 10px; border-bottom: 3px solid #0f172a; }
-      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 9pt; letter-spacing: 2px; text-transform: uppercase; color: #0f172a; }
+      /* Plain, unspaced heading text so ATS parsers read each section name as a word. */
+      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
+      h3 { margin: 0; font-size: 10.2pt; font-weight: 400; color: #0f172a; }
       p { margin: 0 0 4px; }
       ul { margin: 3px 0 8px; padding-left: 16px; }
       li { margin-bottom: 2px; }
@@ -72,7 +74,7 @@ const html = `<!doctype html>
     ${experience
       .map(
         (e) => `<div class="item">
-      <div class="row"><span><b>${esc(e.role)}</b> | ${esc(e.company)}</span><span class="date">${esc(e.period)}</span></div>
+      <div class="row"><h3><b>${esc(e.role)}</b> | ${esc(e.company)}</h3><span class="date">${esc(e.period)}</span></div>
       ${lines(e.points)}
     </div>`,
       )
@@ -82,7 +84,7 @@ const html = `<!doctype html>
     ${projects
       .map(
         (p) => `<div class="item">
-      <b>${esc(p.name)} | ${esc(p.subtitle)}</b> (${esc(p.kind)})
+      <h3><b>${esc(p.name)} | ${esc(p.subtitle)}</b> (${esc(p.kind)})</h3>
       <div class="tech">${esc(p.tech.join(', '))} | ${esc(bare(p.repo))}</div>
       ${lines(p.points)}
     </div>`,
