@@ -153,9 +153,9 @@ export const projects: Project[] = [
       'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount; cached admin analytics for 10 minutes and logged request latency through custom middleware.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
-    live: 'https://hirehub-api-dy61.onrender.com/api/projects',
+    live: 'https://hirehub-api-dy61.onrender.com',
     liveNote: renderNote,
-    docs: 'https://github.com/hasan123dayoub-del/HireHub/blob/main/docs/HireHub.postman_collection.json',
+    docs: 'https://hirehub-api-dy61.onrender.com/docs/api',
   },
   {
     name: 'Property Management System',
