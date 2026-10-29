@@ -300,6 +300,7 @@ function App() {
                         <b>$</b> {p.terminal.request}
                       </code>
                       <code className="terminal-response">→ {p.terminal.response}</code>
+                      {p.liveNote && <span className="cover-note">Free hosting · first load ~1 min</span>}
                     </div>
                   )
                 )}

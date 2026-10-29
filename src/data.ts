@@ -163,6 +163,9 @@ export const projects: Project[] = [
       'Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/NewsRoom',
+    live: 'https://newsroom-api-rmwa.onrender.com',
+    liveNote: renderNote,
+    docs: 'https://newsroom-api-rmwa.onrender.com/docs/api',
   },
   {
     name: 'HireHub',
