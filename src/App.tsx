@@ -119,7 +119,7 @@ function App() {
       </a>
       <header className="nav">
         <div className="container nav-inner">
-          <a href="#top" className="brand" aria-label="Home">
+          <a href="#top" className="brand" aria-label="HD. Back to top">
             HD<span>.</span>
           </a>
           <nav id="primary-nav" aria-label="Primary" className={menuOpen ? 'open' : ''}>
@@ -163,6 +163,8 @@ function App() {
           <img
             className="avatar"
             src={`${import.meta.env.BASE_URL}avatar.jpg`}
+            srcSet={`${import.meta.env.BASE_URL}avatar-320.webp 320w, ${import.meta.env.BASE_URL}avatar.jpg 460w`}
+            sizes="160px"
             alt={profile.name}
             width="160"
             height="160"
