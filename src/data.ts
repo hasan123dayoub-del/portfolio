@@ -139,11 +139,15 @@ export const projects: Project[] = [
     tech: ['Laravel 12', 'Sanctum', 'MySQL'],
     summary:
       'Built the whole backend: orders, suppliers and an in-app wallet. Row locking keeps payments safe: 20 parallel requests on one order charge it exactly once.',
-    terminal: { request: 'POST /api/orders/42/complete ×20', response: '1 × 200 · 19 × 409 · charged once' },
+    image: 'projects/lazyroom-app.jpg',
+    imageCaption: 'Mobile app by a teammate (Flutter)',
     points: [
       'Built the entire backend on my own: customers, suppliers and admins, an order state machine, and wallet payments kept safe under concurrency with database transactions and row locking (pessimistic locking); measured with 20 parallel requests on one order (charged once) and 50 parallel requests across orders (never overdrawn).',
     ],
     repo: 'https://github.com/hasan123dayoub-del/LazyRoom',
+    live: 'https://lazyroom-api.onrender.com',
+    liveNote: renderNote,
+    docs: 'https://lazyroom-api.onrender.com/docs/api',
   },
   {
     name: 'NewsRoom',
