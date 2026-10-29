@@ -311,6 +311,7 @@ function App() {
                     View on GitHub →
                   </a>
                 </div>
+                {p.liveNote && <p className="live-note">{p.liveNote}</p>}
               </article>
             ))}
           </div>

@@ -71,6 +71,8 @@ export const experience = [
   },
 ]
 
+const renderNote = 'Free hosting: the demo sleeps when idle, so the first load can take up to a minute.';
+
 // Add new projects at the TOP of the list (newest first). The LinkedIn helper prints the first one.
 export interface Project {
   name: string;
@@ -81,6 +83,8 @@ export interface Project {
   points: string[];
   repo: string;
   live?: string;
+  // Shown under the links, e.g. for free hosting that sleeps when idle.
+  liveNote?: string;
   docs?: string;
   // Screenshot under public/, e.g. 'projects/name.jpg' (1280x800).
   image?: string;
@@ -100,6 +104,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
     image: 'projects/institute-admin.jpg',
     live: 'https://institute-dashboard-gnsa.onrender.com',
+    liveNote: renderNote,
   },
   {
     name: 'Alumni Network',
@@ -149,6 +154,7 @@ export const projects: Project[] = [
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
     live: 'https://hirehub-api-dy61.onrender.com/api/projects',
+    liveNote: renderNote,
     docs: 'https://github.com/hasan123dayoub-del/HireHub/blob/main/docs/HireHub.postman_collection.json',
   },
   {
