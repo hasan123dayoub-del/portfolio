@@ -327,29 +327,54 @@
   margin: -22px -22px 4px;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
-  background: var(--surface-2);
+  /* The same backdrop on every card, whether it shows a screenshot or a terminal. */
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-2) 22%, transparent), transparent 60%),
+    radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+    var(--terminal);
 }
 
-.project-cover img {
-  display: block;
-  width: 100%;
+/* Screenshots sit in a small browser window that rises from the bottom of the cover. */
+.project-cover.shot {
+  padding: 30px 24px 0;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: #1e293b;
+  box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease;
+}
+
+.project:hover .window {
+  transform: translateY(-6px);
+}
+
+.window .terminal-dots {
+  position: static;
+  flex: none;
+  padding: 7px 10px;
+}
+
+.window img {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
   object-fit: cover;
   object-position: top left;
-  transition: transform 0.5s ease;
-}
-
-.project:hover .project-cover img {
-  transform: scale(1.04);
 }
 
 .cover-caption,
 .cover-note {
   position: absolute;
-  bottom: 10px;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(15, 23, 42, 0.78);
+  background: rgba(15, 23, 42, 0.82);
   color: #fff;
   font-size: 12px;
   backdrop-filter: blur(4px);
@@ -357,9 +382,11 @@
 
 .cover-caption {
   left: 10px;
+  bottom: 10px;
 }
 
 .cover-note {
+  top: 6px;
   right: 10px;
 }
 
@@ -369,10 +396,6 @@
   justify-content: center;
   gap: 10px;
   padding: 18px 20px;
-  background:
-    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-2) 22%, transparent), transparent 60%),
-    radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
-    var(--terminal);
   color: #e2e8f0;
   font-size: 13px;
 }
@@ -824,14 +847,14 @@
   .card,
   .btn,
   .stats li,
-  .project-cover img {
+  .window {
     transition: none;
   }
 
   .project:hover,
   .stats li:hover,
   .btn:hover,
-  .project:hover .project-cover img {
+  .project:hover .window {
     transform: none;
   }
 }

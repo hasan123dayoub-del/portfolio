@@ -269,18 +269,25 @@ function App() {
               <article className="card project" key={p.name}>
                 {p.image ? (
                   <a
-                    className="project-cover"
+                    className="project-cover shot"
                     href={`${import.meta.env.BASE_URL}${p.image}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img
-                      src={`${import.meta.env.BASE_URL}${p.image}`}
-                      alt={`${p.name} screenshot`}
-                      width="1280"
-                      height="800"
-                      loading="lazy"
-                    />
+                    <span className="window">
+                      <span className="terminal-dots">
+                        <i />
+                        <i />
+                        <i />
+                      </span>
+                      <img
+                        src={`${import.meta.env.BASE_URL}${p.image}`}
+                        alt={`${p.name} screenshot`}
+                        width="1280"
+                        height="800"
+                        loading="lazy"
+                      />
+                    </span>
                     {p.imageCaption && <span className="cover-caption">{p.imageCaption}</span>}
                     {p.liveNote && (
                       <span className="cover-note" title={p.liveNote}>
