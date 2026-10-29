@@ -65,7 +65,7 @@ export const experience = [
     period: 'Sep 2025 – Aug 2026',
     points: [
       'Completed two 4-month remote backend internship tracks, Level 1 (Sep 2025 – Jan 2026) and Level 2 (Mar – Jul 2026), building production-style Laravel APIs against real business requirements.',
-      'Built 5 Laravel projects: HireHub and NewsRoom (solo), LazyRoom, Alumni Network and Property Management System (team), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
+      'Built 5 Laravel projects: HireHub and NewsRoom (solo), LazyRoom (sole backend developer in a team project), Alumni Network and Property Management System (team), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
       'Collaborated in teams through Git and GitHub (personal and feature branches, pull requests) and documented the APIs with Postman collections.',
     ],
   },
