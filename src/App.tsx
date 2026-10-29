@@ -270,10 +270,12 @@ function App() {
                 {p.image ? (
                   <a
                     className="project-cover shot"
-                    href={`${import.meta.env.BASE_URL}${p.image}`}
+                    href={p.live ?? p.repo}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`${p.name}: ${p.live ? 'open the live demo' : 'open on GitHub'}`}
                   >
+                    <span className="cover-cta">{p.live ? 'Open live demo ↗' : 'View on GitHub →'}</span>
                     <span className="window">
                       <span className="terminal-dots">
                         <i />

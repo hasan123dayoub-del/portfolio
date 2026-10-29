@@ -369,6 +369,26 @@
   object-position: top left;
 }
 
+/* The cover opens the demo; this label appears on hover and keyboard focus so it reads as a link. */
+.cover-cta {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  background: rgba(9, 12, 19, 0.55);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.project-cover:hover .cover-cta,
+.project-cover:focus-visible .cover-cta {
+  opacity: 1;
+}
+
 .cover-caption,
 .cover-note {
   position: absolute;
