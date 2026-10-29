@@ -123,7 +123,7 @@ export const projects: Project[] = [
     tech: ['Laravel', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
     summary:
       'My part of a university alumni API: the events module, real-time notifications with queued jobs and Pusher, and password reset, all covered by Pest tests.',
-    terminal: { request: 'POST /api/events/12/register', response: '201 Created · reminder job queued' },
+    image: 'projects/alumni-home.jpg',
     points: [
       'Built the university events module (CRUD, registration, attendance, reminders), notifications management (endpoints, queued jobs, real-time Pusher delivery) and password reset/change.',
       'Covered the events, notifications and password features with Pest feature tests.',
@@ -159,7 +159,7 @@ export const projects: Project[] = [
     tech: ['Laravel 11', 'Sanctum', 'Redis', 'MySQL'],
     summary:
       'Headless CMS with versioned APIs (v1/v2), contextual binding, Redis atomic locks against cache stampedes, rate limiting and scheduled report jobs.',
-    terminal: { request: 'GET /api/v2/articles', response: '200 OK · reading_time · tags · comments_count' },
+    image: 'projects/newsroom-home.jpg',
     points: [
       'Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.',
       'Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
