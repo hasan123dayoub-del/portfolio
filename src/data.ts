@@ -129,7 +129,9 @@ export const projects: Project[] = [
       'Covered the events, notifications and password features with Pest feature tests.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Alumni-Network',
-    docs: 'https://nity0i8ngr.apidog.io',
+    live: 'https://alumni-network-api-08ia.onrender.com',
+    liveNote: renderNote,
+    docs: 'https://alumni-network-api-08ia.onrender.com/docs/api',
   },
   {
     name: 'LazyRoom',
@@ -200,6 +202,8 @@ export const projects: Project[] = [
       'My part: admin user management (create employees, change roles, activate and deactivate accounts), employee-to-customer booking messages, customer ratings, and property and booking reports.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/property-management',
+    live: 'https://property-management-xs68.onrender.com/login',
+    liveNote: renderNote,
   },
 ]
 
