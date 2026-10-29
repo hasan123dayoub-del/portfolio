@@ -267,19 +267,43 @@ function App() {
           <div className="grid projects">
             {visibleProjects.map((p) => (
               <article className="card project" key={p.name}>
-                {p.image && (
-                  <a href={`${import.meta.env.BASE_URL}${p.image}`} target="_blank" rel="noreferrer">
+                {p.image ? (
+                  <a
+                    className="project-cover"
+                    href={`${import.meta.env.BASE_URL}${p.image}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
-                      className="project-shot"
                       src={`${import.meta.env.BASE_URL}${p.image}`}
                       alt={`${p.name} screenshot`}
                       width="1280"
                       height="800"
                       loading="lazy"
                     />
+                    {p.imageCaption && <span className="cover-caption">{p.imageCaption}</span>}
+                    {p.liveNote && (
+                      <span className="cover-note" title={p.liveNote}>
+                        Free hosting · first load ~1 min
+                      </span>
+                    )}
                   </a>
+                ) : (
+                  p.terminal && (
+                    <div className="project-cover terminal" aria-hidden="true">
+                      <span className="terminal-dots">
+                        <i />
+                        <i />
+                        <i />
+                      </span>
+                      <code className="terminal-request">
+                        <b>$</b> {p.terminal.request}
+                      </code>
+                      <code className="terminal-response">→ {p.terminal.response}</code>
+                    </div>
+                  )
                 )}
-                <div className="row">
+                <div className="project-head">
                   <h3>{p.name}</h3>
                   <span className="badge">{p.kind}</span>
                 </div>
@@ -291,27 +315,32 @@ function App() {
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
-                <ul className="points">
-                  {p.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-                <div className="project-links">
-                  {p.live && (
-                    <a className="link" href={p.live} target="_blank" rel="noreferrer">
-                      Live demo ↗
+                <p className="project-summary">{p.summary}</p>
+                <div className="project-footer">
+                  <details className="project-details">
+                    <summary>Details</summary>
+                    <ul className="points">
+                      {p.points.map((pt) => (
+                        <li key={pt}>{pt}</li>
+                      ))}
+                    </ul>
+                  </details>
+                  <div className="project-links">
+                    {p.live && (
+                      <a className="link" href={p.live} target="_blank" rel="noreferrer">
+                        Live demo ↗
+                      </a>
+                    )}
+                    {p.docs && (
+                      <a className="link" href={p.docs} target="_blank" rel="noreferrer">
+                        API docs ↗
+                      </a>
+                    )}
+                    <a className="link" href={p.repo} target="_blank" rel="noreferrer">
+                      GitHub →
                     </a>
-                  )}
-                  {p.docs && (
-                    <a className="link" href={p.docs} target="_blank" rel="noreferrer">
-                      API docs ↗
-                    </a>
-                  )}
-                  <a className="link" href={p.repo} target="_blank" rel="noreferrer">
-                    View on GitHub →
-                  </a>
+                  </div>
                 </div>
-                {p.liveNote && <p className="live-note">{p.liveNote}</p>}
               </article>
             ))}
           </div>

@@ -80,6 +80,9 @@ export interface Project {
   kind: 'Individual' | 'Team' | 'Team of 3';
   date: string;
   tech: string[];
+  // One short line for the project card (keep it to about 170 characters so the cards line up).
+  summary: string;
+  // Full details: shown under "Details" on the site and in full on the CV.
   points: string[];
   repo: string;
   live?: string;
@@ -88,6 +91,10 @@ export interface Project {
   docs?: string;
   // Screenshot under public/, e.g. 'projects/name.jpg' (1280x800).
   image?: string;
+  // Small caption on the screenshot, e.g. who built that part of the UI.
+  imageCaption?: string;
+  // Card cover for projects without a screenshot: a real request and what the API answers.
+  terminal?: { request: string; response: string };
 }
 
 export const projects: Project[] = [
@@ -97,6 +104,8 @@ export const projects: Project[] = [
     kind: 'Team of 3',
     date: 'Oct 2026',
     tech: ['Node.js', 'Express 5', 'MongoDB', 'React 19', 'Tailwind CSS'],
+    summary:
+      'Academy platform for 4 roles with JWT auth, Zod validation and MongoDB transactions; scheduled jobs close courses and promote students automatically.',
     points: [
       'Developed an academy platform for 4 roles (admin, secretary, teacher, student) with JWT authentication, Zod validation and MongoDB transactions for multi-document updates.',
       'Automated course closing and student promotion with node-cron jobs, covered by unit tests, and built analytics dashboards with Recharts.',
@@ -112,6 +121,9 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'Jul – Aug 2026',
     tech: ['Laravel', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
+    summary:
+      'My part of a university alumni API: the events module, real-time notifications with queued jobs and Pusher, and password reset, all covered by Pest tests.',
+    terminal: { request: 'POST /api/events/12/register', response: '201 Created · reminder job queued' },
     points: [
       'Built the university events module (CRUD, registration, attendance, reminders), notifications management (endpoints, queued jobs, real-time Pusher delivery) and password reset/change.',
       'Covered the events, notifications and password features with Pest feature tests.',
@@ -125,6 +137,9 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'May 2026',
     tech: ['Laravel 12', 'Sanctum', 'MySQL'],
+    summary:
+      'Built the whole backend: orders, suppliers and an in-app wallet. Row locking keeps payments safe: 20 parallel requests on one order charge it exactly once.',
+    terminal: { request: 'POST /api/orders/42/complete ×20', response: '1 × 200 · 19 × 409 · charged once' },
     points: [
       'Built the entire backend on my own: customers, suppliers and admins, an order state machine, and wallet payments kept safe under concurrency with database transactions and row locking (pessimistic locking); measured with 20 parallel requests on one order (charged once) and 50 parallel requests across orders (never overdrawn).',
     ],
@@ -136,6 +151,9 @@ export const projects: Project[] = [
     kind: 'Individual',
     date: 'May 2026',
     tech: ['Laravel 11', 'Sanctum', 'Redis', 'MySQL'],
+    summary:
+      'Headless CMS with versioned APIs (v1/v2), contextual binding, Redis atomic locks against cache stampedes, rate limiting and scheduled report jobs.',
+    terminal: { request: 'GET /api/v2/articles', response: '200 OK · reading_time · tags · comments_count' },
     points: [
       'Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.',
       'Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
@@ -148,6 +166,9 @@ export const projects: Project[] = [
     kind: 'Individual',
     date: 'Apr 2026',
     tech: ['Laravel 12', 'MySQL', 'Sanctum', 'Events'],
+    summary:
+      'Freelance marketplace API for 3 roles with Repository and Service layers and events. Eager loading cut the project listing from 48 to 5 queries per page.',
+    image: 'projects/hirehub-home.jpg',
     points: [
       'Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).',
       'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount; cached admin analytics for 10 minutes and logged request latency through custom middleware.',
@@ -163,6 +184,10 @@ export const projects: Project[] = [
     kind: 'Team',
     date: 'Dec 2025 – Jan 2026',
     tech: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+    summary:
+      'Team booking platform for 3 roles. My part: admin user management, booking messages, customer ratings, and property and booking reports.',
+    image: 'projects/property-dashboard.jpg',
+    imageCaption: 'Admin dashboard (team UI)',
     points: [
       'Team: booking workflows, role-based authorization for 3 roles, reviews and ratings, and paginated dashboards.',
       'My part: admin user management (create employees, change roles, activate and deactivate accounts), employee-to-customer booking messages, customer ratings, and property and booking reports.',

@@ -1,12 +1,18 @@
 :root {
-  --bg: #fafafa;
+  --bg: #f7f9fc;
   --surface: #ffffff;
-  --border: #e4e4e7;
-  --text: #52525b;
-  --text-h: #09090b;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --text: #475569;
+  --text-h: #0f172a;
   --accent: #0e7490;
-  --accent-bg: rgba(14, 116, 144, 0.1);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --accent-2: #4f46e5;
+  --accent-bg: rgba(14, 116, 144, 0.09);
+  --gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18), 0 4px 10px -6px rgba(15, 23, 42, 0.08);
+  --glow: 0 18px 40px -18px rgba(14, 116, 144, 0.45);
+  --terminal: #0f172a;
 
   --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -21,14 +27,19 @@
 }
 
 :root[data-theme='dark'] {
-  --bg: #0b0d12;
-  --surface: #12151c;
-  --border: #232733;
-  --text: #a1a1aa;
-  --text-h: #f4f4f5;
+  --bg: #090c13;
+  --surface: #10141d;
+  --surface-2: #161b26;
+  --border: #212836;
+  --text: #a3acb9;
+  --text-h: #f1f5f9;
   --accent: #22d3ee;
-  --accent-bg: rgba(34, 211, 238, 0.12);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --accent-2: #818cf8;
+  --accent-bg: rgba(34, 211, 238, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.7), 0 4px 12px -6px rgba(0, 0, 0, 0.5);
+  --glow: 0 18px 44px -18px rgba(34, 211, 238, 0.35);
+  --terminal: #05070c;
   color-scheme: dark;
 }
 
