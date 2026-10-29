@@ -89,7 +89,7 @@ export interface Project {
   // Shown under the links, e.g. for free hosting that sleeps when idle.
   liveNote?: string;
   docs?: string;
-  // Screenshot under public/, e.g. 'projects/name.jpg' (1280x800).
+  // Screenshot under public/, e.g. 'projects/name.jpg' (1280x800). After adding one, run `npm run covers`.
   image?: string;
   // Small caption on the screenshot, e.g. who built that part of the UI.
   imageCaption?: string;
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     subtitle: 'REST API',
     kind: 'Team',
     date: 'Jul – Aug 2026',
-    tech: ['Laravel', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
+    tech: ['Laravel 13', 'Sanctum', 'Pusher', 'Redis', 'Pest'],
     summary:
       'My part of a university alumni API: the events module, real-time notifications with queued jobs and Pusher, and password reset, all covered by Pest tests.',
     image: 'projects/alumni-home.jpg',
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     subtitle: 'Headless CMS API',
     kind: 'Individual',
     date: 'May 2026',
-    tech: ['Laravel 11', 'Sanctum', 'Redis', 'MySQL'],
+    tech: ['Laravel 12', 'Sanctum', 'Redis', 'MySQL'],
     summary:
       'Headless CMS with versioned APIs (v1/v2), contextual binding, Redis atomic locks against cache stampedes, rate limiting and scheduled report jobs.',
     image: 'projects/newsroom-home.jpg',
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     subtitle: 'Booking Platform',
     kind: 'Team',
     date: 'Dec 2025 – Jan 2026',
-    tech: ['Laravel', 'Blade', 'Tailwind CSS', 'MySQL'],
+    tech: ['Laravel 12', 'Blade', 'Tailwind CSS', 'MySQL'],
     summary:
       'Team booking platform for 3 roles. My part: admin user management, booking messages, customer ratings, and property and booking reports.',
     image: 'projects/property-dashboard.jpg',

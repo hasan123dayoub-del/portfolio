@@ -44,6 +44,12 @@ const matchesFilter = (p: (typeof projects)[number], f: Filter) => {
   return p.kind !== 'Individual'
 }
 
+// Every cover 'projects/x.jpg' also has x-640.webp and x.webp (made from the JPEG), so cards load a small file.
+const coverSrcSet = (image: string) => {
+  const base = `${import.meta.env.BASE_URL}${image.replace(/\.jpg$/, '')}`
+  return `${base}-640.webp 640w, ${base}.webp 1280w`
+}
+
 function App() {
   const theme = useSyncExternalStore(subscribeTheme, getTheme, getServerTheme)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -273,7 +279,6 @@ function App() {
                     href={p.live ?? p.repo}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`${p.name}: ${p.live ? 'open the live demo' : 'open on GitHub'}`}
                   >
                     <span className="cover-cta">{p.live ? 'Open live demo ↗' : 'View on GitHub →'}</span>
                     <span className="window">
@@ -284,6 +289,8 @@ function App() {
                       </span>
                       <img
                         src={`${import.meta.env.BASE_URL}${p.image}`}
+                        srcSet={coverSrcSet(p.image)}
+                        sizes="(max-width: 720px) 100vw, 330px"
                         alt={`${p.name} screenshot`}
                         width="1280"
                         height="800"
