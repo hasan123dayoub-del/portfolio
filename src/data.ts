@@ -64,7 +64,7 @@ export const experience = [
     mode: 'Remote',
     period: 'Sep 2025 – Aug 2026',
     points: [
-      'Completed two 4-month remote backend internship tracks, Level 1 (Sep 2025 – Jan 2026) and Level 2 (Mar – Jul 2026), building production-style Laravel APIs against real business requirements.',
+      'Completed two 4-month remote backend internship tracks, Level 1 (Sep – Dec 2025) and Level 2 (Mar – Jul 2026), building production-style Laravel APIs against real business requirements.',
       'Built 5 Laravel projects: HireHub and NewsRoom (solo), LazyRoom (sole backend developer in a team project), Alumni Network and Property Management System (team), applying Repository and Service patterns, domain events, queued jobs and Sanctum authentication.',
       'Collaborated in teams through Git and GitHub (personal and feature branches, pull requests) and documented the APIs with Postman collections.',
     ],
@@ -207,13 +207,13 @@ export const projects: Project[] = [
   },
 ]
 
-// Dates are as printed on the certificates. Level 1 is left empty until focal X corrects the printed year.
+// Dates and IDs are as printed on the certificates and recommendation letters.
 export const certifications = [
   {
     name: 'focal X Backend Internship, Levels 1 & 2',
     detail: 'Two 4-month tracks · certified by the American Institute for Applied Education (AIAE, CertiPro), Passed with Distinction',
     date: 'Aug 2026',
-    credential: 'Level 2: CERT-10-UI-3069 · Level 1: 9PED0SS3Z08 · AIAE: TPCSY26-0000104603',
+    credential: 'Level 1: CERT-09-UI-8396 · Level 2: CERT-10-UI-3069 · AIAE: TPCSY26-0000104603',
     verify: 'aiae.us/verification',
   },
 ]
