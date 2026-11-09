@@ -238,7 +238,7 @@ export const certifications = [
 
 export const education = {
   degree: 'Bachelor of Engineering, Informatics Engineering (Software Engineering)',
-  school: 'University of Latakia, Syria',
+  school: 'University of Latakia (formerly Tishreen University), Syria',
   period: '2022 – 2027 (expected)',
 }
 
