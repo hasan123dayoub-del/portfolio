@@ -6,21 +6,21 @@
     <style>
       @page { size: A4; margin: 12mm 14mm; }
       * { box-sizing: border-box; }
-      body { margin: 0; font: 10pt/1.42 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+      body { margin: 0; font: 10pt/1.38 'Segoe UI', Arial, sans-serif; color: #1f2937; }
       h1 { margin: 0; font-size: 26pt; color: #0f172a; letter-spacing: -0.5px; }
       .title { margin: 4px 0 8px; font-size: 12pt; font-weight: 600; color: #0e7490; }
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
       .contact span + span::before { content: '|'; margin: 0 8px; color: #94a3b8; }
       header { padding-bottom: 10px; border-bottom: 3px solid #0f172a; }
       /* Plain, unspaced heading text so ATS parsers read each section name as a word. */
-      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
+      h2 { margin: 13px 0 5px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
       h3 { margin: 0; font-size: 10.2pt; font-weight: 400; color: #0f172a; }
       p { margin: 0 0 4px; }
       ul { margin: 3px 0 8px; padding-left: 16px; }
       li { margin-bottom: 2px; }
       .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
       .date { font-size: 9pt; color: #64748b; white-space: nowrap; }
-      .item { margin-top: 8px; break-inside: avoid; }
+      .item { margin-top: 6px; break-inside: avoid; }
       .item b { color: #0f172a; }
       .tech { font-size: 8.8pt; color: #0e7490; margin: 1px 0 2px; }
       .small { font-size: 8.8pt; color: #64748b; }
@@ -39,15 +39,15 @@
     </header>
 
     <h2>Profile</h2>
-    <p>Junior backend-focused full-stack developer with 13 months of project-based training in Laravel and Node.js/React. Built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 66 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).</p>
+    <p>Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 98 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).</p>
 
     <h2>Technical Skills</h2>
-    <p class="skill"><b>Backend:</b> PHP 8, Laravel, Node.js, Express.js, RESTful APIs, API versioning</p>
+    <p class="skill"><b>Backend:</b> PHP 8, Laravel, Node.js, TypeScript, Express.js, RESTful APIs, API versioning</p>
     <p class="skill"><b>Architecture:</b> OOP, MVC, SOLID, Repository &amp; Service patterns, Events, Queues &amp; jobs, Cron scheduling, WebSockets (Pusher)</p>
     <p class="skill"><b>Security:</b> Laravel Sanctum, JWT, RBAC, Policies, Form Request, Zod</p>
-    <p class="skill"><b>Databases:</b> MySQL, MongoDB, Redis, Eloquent ORM, Transactions</p>
-    <p class="skill"><b>Frontend:</b> JavaScript (ES6+), React, Tailwind CSS, Blade, HTML5, CSS3</p>
-    <p class="skill"><b>Testing &amp; Tools:</b> Pest, PHPUnit, Unit testing, Postman, Git, GitHub, GitHub Actions (CI)</p>
+    <p class="skill"><b>Databases:</b> MySQL, PostgreSQL, MongoDB, Redis, Eloquent ORM, Prisma, Transactions</p>
+    <p class="skill"><b>Frontend:</b> JavaScript (ES6+), React, Next.js, Tailwind CSS, Blade, HTML5, CSS3</p>
+    <p class="skill"><b>Testing &amp; DevOps:</b> Pest, PHPUnit, Vitest, Postman, Docker, Git, GitHub Actions (CI)</p>
 
     <h2>Professional Experience</h2>
     <div class="item">
@@ -60,6 +60,11 @@
     </div>
 
     <h2>Selected Projects</h2>
+    <div class="item">
+      <div class="row"><h3><b>Movies Platform | Full-Stack Platform</b> (Individual)</h3><span class="date">Nov 2026</span></div>
+      <div class="tech">TypeScript, Node.js, PostgreSQL, Prisma, Next.js 16 | github.com/hasan123dayoub-del/movies-platform | Live: movies-platform-web.onrender.com</div>
+      <ul><li>Built a 32-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 8 PostgreSQL tables, with JWT auth in an httpOnly cookie and USER/ADMIN roles.</li><li>Built the Next.js 16 site (Server Components, Server Actions, live search); 33 API tests (Vitest + Supertest) run in GitHub Actions; deployed as two Docker services on Render with Neon PostgreSQL.</li></ul>
+    </div>
     <div class="item">
       <div class="row"><h3><b>Institute Management System | Full-Stack Platform</b> (Team of 3)</h3><span class="date">Oct 2026</span></div>
       <div class="tech">Node.js, Express 5, MongoDB, React 19, Tailwind CSS | github.com/hasan123dayoub-del/Institute-Management-System | Live: institute-dashboard-gnsa.onrender.com</div>
@@ -78,12 +83,12 @@
     <div class="item">
       <div class="row"><h3><b>NewsRoom | Headless CMS API</b> (Individual)</h3><span class="date">May 2026</span></div>
       <div class="tech">Laravel 12, Sanctum, Redis, MySQL | github.com/hasan123dayoub-del/NewsRoom | Live: newsroom-api-rmwa.onrender.com | API docs: newsroom-api-rmwa.onrender.com/docs/api</div>
-      <ul><li>Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.</li><li>Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.</li></ul>
+      <ul><li>Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.</li><li>Prevented cache stampedes with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.</li></ul>
     </div>
     <div class="item">
       <div class="row"><h3><b>HireHub | Freelance Marketplace API</b> (Individual)</h3><span class="date">Apr 2026</span></div>
       <div class="tech">Laravel 12, MySQL, Sanctum, Events | github.com/hasan123dayoub-del/HireHub | Live: hirehub-api-dy61.onrender.com | API docs: hirehub-api-dy61.onrender.com/docs/api</div>
-      <ul><li>Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).</li><li>Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount; cached admin analytics for 10 minutes and logged request latency through custom middleware.</li></ul>
+      <ul><li>Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).</li><li>Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount and cached admin analytics for 10 minutes.</li></ul>
     </div>
     <div class="item">
       <div class="row"><h3><b>Property Management System | Booking Platform</b> (Team)</h3><span class="date">Dec 2025 – Jan 2026</span></div>

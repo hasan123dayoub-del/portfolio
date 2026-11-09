@@ -17,33 +17,33 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 13 months of project-based training in PHP/Laravel and JavaScript (Node.js, Express, React, MongoDB). I built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 66 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 98 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior backend-focused full-stack developer with 13 months of project-based training in Laravel and Node.js/React. Built 3 Laravel APIs on my own (HireHub, NewsRoom and the LazyRoom backend, 66 REST endpoints) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 98 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
-  { value: '66', label: 'REST endpoints I built on my own' },
-  { value: '6', label: 'projects (3 APIs built solo)' },
-  { value: '13 mo', label: 'project-based training' },
+  { value: '98', label: 'REST endpoints I built on my own' },
+  { value: '7', label: 'projects (4 built solo)' },
+  { value: '14 mo', label: 'project-based training' },
   { value: '2', label: 'certified internship levels' },
 ]
 
 export const skills = [
-  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'Express.js', 'RESTful APIs', 'API versioning'] },
+  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'TypeScript', 'Express.js', 'RESTful APIs', 'API versioning'] },
   {
     group: 'Architecture',
     items: ['OOP', 'MVC', 'SOLID', 'Repository & Service patterns', 'Events', 'Queues & jobs', 'Cron scheduling', 'WebSockets (Pusher)'],
   },
   { group: 'Security', items: ['Laravel Sanctum', 'JWT', 'RBAC', 'Policies', 'Form Request', 'Zod'] },
-  { group: 'Databases', items: ['MySQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Transactions'] },
-  { group: 'Frontend', items: ['JavaScript (ES6+)', 'React', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
-  { group: 'Testing & Tools', items: ['Pest', 'PHPUnit', 'Unit testing', 'Postman', 'Git', 'GitHub', 'GitHub Actions (CI)'] },
+  { group: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Prisma', 'Transactions'] },
+  { group: 'Frontend', items: ['JavaScript (ES6+)', 'React', 'Next.js', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
+  { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Git', 'GitHub Actions (CI)'] },
 ]
 
 // What you are learning right now. Add one line per topic, newest first.
 export const learning = [
-  { topic: 'React & Node.js', since: 'Aug 2026', note: 'Full-stack JavaScript' },
+  { topic: 'Next.js & TypeScript', since: 'Nov 2026', note: 'Full-stack TypeScript' },
   { topic: 'English', since: 'Aug 2026', note: 'Bytes4Future English track' },
 ]
 
@@ -98,6 +98,24 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: 'Movies Platform',
+    subtitle: 'Full-Stack Platform',
+    kind: 'Individual',
+    date: 'Nov 2026',
+    tech: ['TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Next.js 16'],
+    summary:
+      'Movies, series and actors platform built end to end: a 32-endpoint Express + Prisma API on PostgreSQL, a Next.js 16 site with live search, and an admin area.',
+    points: [
+      'Built a 32-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 8 PostgreSQL tables, with JWT auth in an httpOnly cookie and USER/ADMIN roles.',
+      'Built the Next.js 16 site (Server Components, Server Actions, live search); 33 API tests (Vitest + Supertest) run in GitHub Actions; deployed as two Docker services on Render with Neon PostgreSQL.',
+    ],
+    repo: 'https://github.com/hasan123dayoub-del/movies-platform',
+    image: 'projects/movies-platform.jpg',
+    live: 'https://movies-platform-web.onrender.com',
+    liveNote: renderNote,
+    docs: 'https://github.com/hasan123dayoub-del/movies-platform/blob/main/backend/postman/movies-platform.postman_collection.json',
+  },
   {
     name: 'Institute Management System',
     subtitle: 'Full-Stack Platform',
@@ -162,7 +180,7 @@ export const projects: Project[] = [
     image: 'projects/newsroom-home.jpg',
     points: [
       'Served web and mobile clients from one codebase via versioned APIs (v1/v2), swapping implementations with contextual binding instead of duplicating controllers.',
-      'Prevented cache stampedes (many requests rebuilding the same cache at once) with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
+      'Prevented cache stampedes with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/NewsRoom',
     live: 'https://newsroom-api-rmwa.onrender.com',
@@ -180,7 +198,7 @@ export const projects: Project[] = [
     image: 'projects/hirehub-home.jpg',
     points: [
       'Architected an API serving 3 roles (client, freelancer, admin) over 10 Eloquent models, with Repository and Service layers and an event-driven proposal flow that can be extended without rewriting existing code (Open/Closed principle).',
-      'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount; cached admin analytics for 10 minutes and logged request latency through custom middleware.',
+      'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount and cached admin analytics for 10 minutes.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
     live: 'https://hirehub-api-dy61.onrender.com',

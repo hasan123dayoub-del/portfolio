@@ -24,21 +24,21 @@ const lines = (arr) => `<ul>${arr.map((p) => `<li>${esc(p)}</li>`).join('')}</ul
 const css = `
       @page { size: A4; margin: 12mm 14mm; }
       * { box-sizing: border-box; }
-      body { margin: 0; font: 10pt/1.42 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+      body { margin: 0; font: 10pt/1.38 'Segoe UI', Arial, sans-serif; color: #1f2937; }
       h1 { margin: 0; font-size: 26pt; color: #0f172a; letter-spacing: -0.5px; }
       .title { margin: 4px 0 8px; font-size: 12pt; font-weight: 600; color: #0e7490; }
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
       .contact span + span::before { content: '|'; margin: 0 8px; color: #94a3b8; }
       header { padding-bottom: 10px; border-bottom: 3px solid #0f172a; }
       /* Plain, unspaced heading text so ATS parsers read each section name as a word. */
-      h2 { margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
+      h2 { margin: 13px 0 5px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
       h3 { margin: 0; font-size: 10.2pt; font-weight: 400; color: #0f172a; }
       p { margin: 0 0 4px; }
       ul { margin: 3px 0 8px; padding-left: 16px; }
       li { margin-bottom: 2px; }
       .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
       .date { font-size: 9pt; color: #64748b; white-space: nowrap; }
-      .item { margin-top: 8px; break-inside: avoid; }
+      .item { margin-top: 6px; break-inside: avoid; }
       .item b { color: #0f172a; }
       .tech { font-size: 8.8pt; color: #0e7490; margin: 1px 0 2px; }
       .small { font-size: 8.8pt; color: #64748b; }
