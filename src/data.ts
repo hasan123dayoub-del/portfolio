@@ -54,8 +54,9 @@ export const experience = [
     mode: 'On-site',
     period: 'Aug 2026 – Present',
     points: [
-      'Training across 3 parallel tracks: full-stack development (JavaScript, Node.js, Express.js, React), Soft Skills and Business, and English.',
+      'Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.',
       'Co-developed the Institute Management System (see Projects) with a team of 3: a Node.js REST API consumed by a 13-page React dashboard.',
+      'Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed with Docker.',
     ],
   },
   {
