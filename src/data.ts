@@ -5,7 +5,7 @@ export const profile = {
   title: 'Backend-focused Full-Stack Developer',
   // Used only on the CV.
   cvTitle: 'Backend-focused Full-Stack Developer',
-  stack: 'Laravel · Node.js · React',
+  stack: 'Laravel · Node.js · TypeScript · React · Next.js',
   availability: 'Available now for part-time work and full-time from Aug 2027 (remote or on-site; open to relocation).',
   location: 'Damascus, Syria',
   email: 'hasan123dayoub@gmail.com',
