@@ -17,20 +17,20 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 98 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 116 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 98 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 116 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
-  { value: '98', label: 'REST endpoints I built on my own' },
+  { value: '116', label: 'REST endpoints I built on my own' },
   { value: '7', label: 'projects (4 built solo)' },
   { value: '14 mo', label: 'project-based training' },
   { value: '2', label: 'certified internship levels' },
 ]
 
 export const skills = [
-  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'TypeScript', 'Express.js', 'RESTful APIs', 'API versioning'] },
+  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'TypeScript', 'Express.js', 'RESTful APIs', 'API versioning', 'OpenAPI (Swagger)'] },
   {
     group: 'Architecture',
     items: ['OOP', 'MVC', 'SOLID', 'Repository & Service patterns', 'Events', 'Queues & jobs', 'Cron scheduling', 'WebSockets (Pusher)'],
@@ -106,16 +106,16 @@ export const projects: Project[] = [
     date: 'Nov 2026',
     tech: ['TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Next.js 16'],
     summary:
-      'Movies, series and actors platform built end to end: a 32-endpoint Express + Prisma API on PostgreSQL, a Next.js 16 site with live search, and an admin area.',
+      'Movies, series and actors platform built end to end: a 50-endpoint Express + Prisma API on PostgreSQL with Swagger docs, and a Next.js 16 site with reviews and video streaming.',
     points: [
-      'Built a 32-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 8 PostgreSQL tables, with JWT auth in an httpOnly cookie and USER/ADMIN roles.',
-      'Built the Next.js 16 site (Server Components, Server Actions, live search); 33 API tests (Vitest + Supertest) run in GitHub Actions; deployed as two Docker services on Render with Neon PostgreSQL.',
+      'Built a 50-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 10 PostgreSQL tables: JWT auth (httpOnly cookie), USER/ADMIN roles, ratings, reviews, a watchlist and Swagger docs generated from Zod.',
+      'Built the Next.js 16 site (Server Components, Server Actions, live search) with adaptive HLS video; 76 API tests (Vitest + Supertest) in GitHub Actions; two Docker services on Render with Neon PostgreSQL.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/movies-platform',
     image: 'projects/movies-platform.jpg',
     live: 'https://movies-platform-web.onrender.com',
     liveNote: renderNote,
-    docs: 'https://github.com/hasan123dayoub-del/movies-platform/blob/main/backend/postman/movies-platform.postman_collection.json',
+    docs: 'https://movies-platform-api.onrender.com/docs',
   },
   {
     name: 'Institute Management System',
