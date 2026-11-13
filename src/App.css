@@ -106,13 +106,13 @@
 }
 
 .avatar {
-  flex: none;
-  width: 160px;
-  height: 160px;
+  position: relative;
+  display: block;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid transparent;
-  background: var(--gradient) border-box;
+  border: 6px solid var(--bg);
   box-shadow: var(--glow);
 }
 
@@ -629,14 +629,14 @@
 @media (max-width: 720px) {
   .hero {
     padding-block: 64px 48px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
     gap: 28px;
   }
 
   .avatar {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -909,3 +909,325 @@
   gap: 8px 16px;
 }
 
+
+/* ---------- Hero: photo in a rotating gradient ring ---------- */
+.avatar-wrap {
+  position: relative;
+  flex: none;
+  order: 2;
+  margin-inline-start: auto;
+  padding: 6px;
+  animation: pop-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-2), transparent 55%, var(--accent));
+  animation: spin 9s linear infinite;
+}
+
+.avatar-ring::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 28%, transparent), transparent);
+  filter: blur(14px);
+}
+
+.status-pill {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-h);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+}
+
+.status-pill i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: pulse 2s ease-out infinite;
+}
+
+/* Hero text comes in line by line */
+.hero-text > * {
+  animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-text > :nth-child(2) { animation-delay: 0.08s; }
+.hero-text > :nth-child(3) { animation-delay: 0.16s; }
+.hero-text > :nth-child(4) { animation-delay: 0.24s; }
+.hero-text > :nth-child(5) { animation-delay: 0.32s; }
+.hero-text > :nth-child(6) { animation-delay: 0.4s; }
+
+.hero h1 {
+  background: linear-gradient(120deg, var(--text-h) 40%, var(--accent) 70%, var(--accent-2));
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.08s both, shimmer 6s ease-in-out 1s infinite alternate;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn svg {
+  transition: transform 0.25s;
+}
+
+.btn.primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---------- Social icons ---------- */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-h);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: var(--glow);
+}
+
+.socials.small {
+  margin-top: 0;
+}
+
+.socials.small .social {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.contact-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-list a svg {
+  color: var(--accent);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ---------- Services ---------- */
+.section-intro {
+  margin: -12px 0 24px;
+}
+
+.grid.services {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.service {
+  position: relative;
+  overflow: hidden;
+  padding: 24px 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.service::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow), var(--glow);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+.service:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.service:hover .service-icon {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.service h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.service p {
+  font-size: 14.5px;
+}
+
+.service-proof {
+  margin-top: 14px !important;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12.5px !important;
+}
+
+/* ---------- A soft light that follows the pointer over cards ---------- */
+.card,
+.service {
+  background-image: radial-gradient(
+    380px circle at var(--mx, -400px) var(--my, -400px),
+    color-mix(in srgb, var(--accent) 9%, transparent),
+    transparent 60%
+  );
+}
+
+/* ---------- Reading progress bar ---------- */
+.scroll-progress {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(var(--scroll, 0));
+  transform-origin: left;
+}
+
+/* ---------- Grid items appear one after another ---------- */
+.js [data-reveal]:not(.in) .stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.stagger > * {
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s, border-color 0.25s;
+}
+
+.in .stagger > :nth-child(2) { transition-delay: 0.07s; }
+.in .stagger > :nth-child(3) { transition-delay: 0.14s; }
+.in .stagger > :nth-child(4) { transition-delay: 0.21s; }
+.in .stagger > :nth-child(5) { transition-delay: 0.28s; }
+.in .stagger > :nth-child(6) { transition-delay: 0.35s; }
+.in .stagger > :nth-child(n + 7) { transition-delay: 0.42s; }
+
+/* Hover lifts on staggered items must not wait for the reveal delay */
+.in .stagger > :hover {
+  transition-delay: 0s;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes shimmer {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+
+@keyframes pulse {
+  70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@media (max-width: 720px) {
+  .avatar-wrap {
+    order: -1;
+    margin-inline-start: 0;
+  }
+
+  .footer-inner {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-wrap,
+  .avatar-ring,
+  .status-pill i,
+  .hero-text > *,
+  .hero h1 {
+    animation: none;
+  }
+
+  .stagger > *,
+  .service,
+  .service::before,
+  .service-icon,
+  .social,
+  .btn svg {
+    transition: none;
+  }
+
+  .service:hover,
+  .social:hover,
+  .service:hover .service-icon,
+  .btn.primary:hover svg {
+    transform: none;
+  }
+}

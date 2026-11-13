@@ -2,6 +2,17 @@ import { useEffect, useState, useSyncExternalStore } from 'react'
 import './App.css'
 import ContactForm from './components/ContactForm'
 import {
+  ArrowRightIcon,
+  DatabaseIcon,
+  DownloadIcon,
+  GitHubIcon,
+  LayersIcon,
+  LinkedInIcon,
+  MailIcon,
+  ServerIcon,
+  ShieldCheckIcon,
+} from './components/Icons'
+import {
   certifications,
   education,
   experience,
@@ -9,9 +20,13 @@ import {
   learning,
   profile,
   projects,
+  services,
   skills,
   stats,
 } from './data'
+
+// The icon for each service in data.ts (its `icon` key)
+const serviceIcons = { server: ServerIcon, layers: LayersIcon, database: DatabaseIcon, shield: ShieldCheckIcon }
 
 type Theme = 'light' | 'dark'
 
@@ -26,6 +41,7 @@ const getServerTheme = (): Theme => 'light'
 
 const navItems = [
   ['about', 'About'],
+  ['services', 'Services'],
   ['skills', 'Skills'],
   ['experience', 'Experience'],
   ['projects', 'Projects'],
@@ -104,10 +120,31 @@ function App() {
     return () => io.disconnect()
   }, [])
 
+  // Back-to-top button and the reading progress bar share one scroll listener.
   useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 600)
+    const root = document.documentElement
+    const onScroll = () => {
+      setShowTop(window.scrollY > 600)
+      const max = root.scrollHeight - window.innerHeight
+      root.style.setProperty('--scroll', String(max > 0 ? window.scrollY / max : 0))
+    }
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // A soft light that follows the pointer over cards (CSS reads --mx/--my on the hovered card).
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches) return
+    const onMove = (e: PointerEvent) => {
+      const card = (e.target as Element | null)?.closest<HTMLElement>('.card, .service')
+      if (!card) return
+      const r = card.getBoundingClientRect()
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`)
+      card.style.setProperty('--my', `${e.clientY - r.top}px`)
+    }
+    document.addEventListener('pointermove', onMove, { passive: true })
+    return () => document.removeEventListener('pointermove', onMove)
   }, [])
 
   const visibleProjects = projects.filter((p) => matchesFilter(p, filter))
@@ -118,6 +155,7 @@ function App() {
         Skip to content
       </a>
       <header className="nav">
+        <div className="scroll-progress" aria-hidden="true" />
         <div className="container nav-inner">
           <a href="#top" className="brand" aria-label="HD. Back to top">
             HD<span>.</span>
@@ -160,16 +198,22 @@ function App() {
 
       <main id="main">
         <section id="top" className="hero container">
-          <img
-            className="avatar"
-            src={`${import.meta.env.BASE_URL}avatar.jpg`}
-            srcSet={`${import.meta.env.BASE_URL}avatar-320.webp 320w, ${import.meta.env.BASE_URL}avatar.jpg 460w`}
-            sizes="160px"
-            alt={profile.name}
-            width="160"
-            height="160"
-            fetchPriority="high"
-          />
+          <div className="avatar-wrap">
+            <span className="avatar-ring" aria-hidden="true" />
+            <img
+              className="avatar"
+              src={`${import.meta.env.BASE_URL}avatar.jpg`}
+              srcSet={`${import.meta.env.BASE_URL}avatar-320.webp 320w, ${import.meta.env.BASE_URL}avatar.webp 460w`}
+              sizes="(max-width: 720px) 180px, 260px"
+              alt={profile.name}
+              width="260"
+              height="260"
+              fetchPriority="high"
+            />
+            <span className="status-pill">
+              <i aria-hidden="true" /> Open to work
+            </span>
+          </div>
           <div className="hero-text">
             <p className="eyebrow">{profile.location}</p>
             <h1>{profile.name}</h1>
@@ -181,16 +225,24 @@ function App() {
             </p>
             <div className="actions">
               <a className="btn primary" href="#projects">
-                View projects
+                View projects <ArrowRightIcon size={18} />
               </a>
               <a className="btn" href="#contact">
                 Get in touch
               </a>
               <a className="btn" href={`${import.meta.env.BASE_URL}Hasan_Dayoub_CV.pdf`} download>
-                Download CV
+                <DownloadIcon size={18} /> Download CV
               </a>
-              <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
-                GitHub
+            </div>
+            <div className="socials">
+              <a className="social" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+                <GitHubIcon />
+              </a>
+              <a className="social" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <LinkedInIcon />
+              </a>
+              <a className="social" href={`mailto:${profile.email}`} aria-label="Email" title={profile.email}>
+                <MailIcon />
               </a>
             </div>
           </div>
@@ -199,7 +251,7 @@ function App() {
         <section id="about" className="container section" data-reveal>
           <h2>About</h2>
           <p className="summary">{profile.summary}</p>
-          <ul className="stats">
+          <ul className="stats stagger">
             {stats.map((s) => (
               <li key={s.label}>
                 <strong>{s.value}</strong>
@@ -209,9 +261,29 @@ function App() {
           </ul>
         </section>
 
+        <section id="services" className="container section" data-reveal>
+          <h2>Services</h2>
+          <p className="summary section-intro">What I can build for your team, with a live project behind every line.</p>
+          <div className="grid services stagger">
+            {services.map((sv) => {
+              const Icon = serviceIcons[sv.icon]
+              return (
+                <article className="service" key={sv.title}>
+                  <span className="service-icon">
+                    <Icon size={24} />
+                  </span>
+                  <h3>{sv.title}</h3>
+                  <p>{sv.text}</p>
+                  <p className="service-proof">{sv.proof}</p>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
         <section id="skills" className="container section" data-reveal>
           <h2>Technical skills</h2>
-          <div className="grid skills">
+          <div className="grid skills stagger">
             {skills.map((g) => (
               <div className="card" key={g.group}>
                 <h3>{g.group}</h3>
@@ -272,7 +344,7 @@ function App() {
               </button>
             ))}
           </div>
-          <div className="grid projects">
+          <div className="grid projects stagger">
             {visibleProjects.map((p) => (
               <article className="card project" key={p.name}>
                 {p.image ? (
@@ -407,16 +479,18 @@ function App() {
             <ContactForm />
             <ul className="contact-list">
               <li>
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+                <a href={`mailto:${profile.email}`}>
+                  <MailIcon /> {profile.email}
+                </a>
               </li>
               <li>
                 <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn
+                  <LinkedInIcon /> LinkedIn
                 </a>
               </li>
               <li>
                 <a href={profile.github} target="_blank" rel="noreferrer">
-                  GitHub
+                  <GitHubIcon /> GitHub
                 </a>
               </li>
             </ul>
@@ -425,8 +499,21 @@ function App() {
       </main>
 
       <footer className="footer">
-        <div className="container">
-          © {new Date().getFullYear()} {profile.name}
+        <div className="container footer-inner">
+          <span>
+            © {new Date().getFullYear()} {profile.name}
+          </span>
+          <div className="socials small">
+            <a className="social" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+              <GitHubIcon size={18} />
+            </a>
+            <a className="social" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <LinkedInIcon size={18} />
+            </a>
+            <a className="social" href={`mailto:${profile.email}`} aria-label="Email" title={profile.email}>
+              <MailIcon size={18} />
+            </a>
+          </div>
         </div>
       </footer>
 

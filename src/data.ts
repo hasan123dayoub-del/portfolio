@@ -41,6 +41,34 @@ export const skills = [
   { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Git', 'GitHub Actions (CI)'] },
 ]
 
+// What I can build for a team or a client. `icon` is a key of serviceIcons in components/Icons.tsx.
+export const services = [
+  {
+    icon: 'server',
+    title: 'Backend & REST APIs',
+    text: 'Secure, well-structured APIs in Laravel or Node.js/TypeScript: authentication, roles, validation, versioning and clear error responses.',
+    proof: 'HireHub · NewsRoom · LazyRoom',
+  },
+  {
+    icon: 'layers',
+    title: 'Full-stack web apps',
+    text: 'A React or Next.js interface on top of the API, with admin dashboards, live search and pages that stay fast.',
+    proof: 'Movies Platform · Institute',
+  },
+  {
+    icon: 'database',
+    title: 'Databases & performance',
+    text: 'Data models in MySQL, PostgreSQL or MongoDB, transactions and row locking for money, caching and fewer queries per page.',
+    proof: '48 → 5 queries · charged once under 20 parallel requests',
+  },
+  {
+    icon: 'shield',
+    title: 'Testing, docs & deployment',
+    text: 'Automated tests in CI, interactive OpenAPI docs and Docker deployments, so every feature is checked, documented and live.',
+    proof: 'Pest · Vitest · Swagger · Docker',
+  },
+] as const
+
 // What you are learning right now. Add one line per topic, newest first.
 export const learning = [
   { topic: 'Next.js & TypeScript', since: 'Nov 2026', note: 'Full-stack TypeScript' },
