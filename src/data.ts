@@ -137,7 +137,7 @@ export const projects: Project[] = [
       'Movies and series platform built end to end: a 52-endpoint Express + Prisma API with Swagger docs, and a Next.js site with video, where-to-watch and TV-remote support.',
     points: [
       'Built a 52-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 10 PostgreSQL tables: JWT auth (httpOnly cookie), USER/ADMIN roles, ratings, reviews, a watchlist and Swagger docs generated from Zod.',
-      'Built the Next.js 16 site with adaptive HLS video, where-to-watch offers per country (TMDB API) and TV-remote navigation; 87 API tests (Vitest + Supertest) in GitHub Actions; Docker on Render with Neon PostgreSQL.',
+      'Built the Next.js 16 site with adaptive HLS video, where-to-watch offers per country (TMDB API) and TV-remote navigation; 92 API tests (Vitest + Supertest) in GitHub Actions; Docker on Render with Neon PostgreSQL.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/movies-platform',
     image: 'projects/movies-platform.jpg',
