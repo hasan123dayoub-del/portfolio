@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 dist-ssr
 PORTFOLIO_BLUEPRINT.md
+.neon

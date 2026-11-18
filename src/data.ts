@@ -38,7 +38,7 @@ export const skills = [
   { group: 'Security', items: ['Laravel Sanctum', 'JWT', 'RBAC', 'Policies', 'Form Request', 'Zod'] },
   { group: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Prisma', 'Transactions'] },
   { group: 'Frontend', items: ['JavaScript (ES6+)', 'React', 'Next.js', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
-  { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Git', 'GitHub Actions (CI)'] },
+  { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Vercel', 'Git', 'GitHub Actions (CI)'] },
 ]
 
 // What I can build for a team or a client. `icon` is a key of serviceIcons in components/Icons.tsx.
@@ -64,8 +64,8 @@ export const services = [
   {
     icon: 'shield',
     title: 'Testing, docs & deployment',
-    text: 'Automated tests in CI, interactive OpenAPI docs and Docker deployments, so every feature is checked, documented and live.',
-    proof: 'Pest · Vitest · Swagger · Docker',
+    text: 'Automated tests in CI, interactive OpenAPI docs and cloud deployments (Vercel, Docker), so every feature is checked, documented and live.',
+    proof: 'Pest · Vitest · Swagger · Vercel · Docker',
   },
 ] as const
 
@@ -84,7 +84,7 @@ export const experience = [
     points: [
       'Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.',
       'Co-developed the Institute Management System (see Projects) with a team of 3: a Node.js REST API consumed by a 13-page React dashboard.',
-      'Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed with Docker.',
+      'Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed on Vercel.',
     ],
   },
   {
@@ -99,8 +99,6 @@ export const experience = [
     ],
   },
 ]
-
-const renderNote = 'Free hosting: the demo sleeps when idle, so the first load can take up to a minute.';
 
 // Add new projects at the TOP of the list (newest first). The LinkedIn helper prints the first one.
 export interface Project {
@@ -137,13 +135,12 @@ export const projects: Project[] = [
       'Movies and series platform built end to end: a 52-endpoint Express + Prisma API with Swagger docs, and a Next.js site with video, where-to-watch and TV-remote support.',
     points: [
       'Built a 52-endpoint REST API (Express 5, TypeScript, Zod, Prisma) over 10 PostgreSQL tables: JWT auth (httpOnly cookie), USER/ADMIN roles, ratings, reviews, a watchlist and Swagger docs generated from Zod.',
-      'Built the Next.js 16 site with adaptive HLS video, where-to-watch offers per country (TMDB API) and TV-remote navigation; 92 API tests (Vitest + Supertest) in GitHub Actions; Docker on Render with Neon PostgreSQL.',
+      'Built the Next.js 16 site with adaptive HLS video, where-to-watch offers per country (TMDB API) and TV-remote navigation; 92 API tests (Vitest + Supertest) in GitHub Actions; deployed on Vercel with Neon PostgreSQL.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/movies-platform',
     image: 'projects/movies-platform.jpg',
-    live: 'https://movies-platform-web.onrender.com',
-    liveNote: renderNote,
-    docs: 'https://movies-platform-api.onrender.com/docs',
+    live: 'https://movies-platform-web.vercel.app',
+    docs: 'https://movies-platform-api.vercel.app/docs',
   },
   {
     name: 'Institute Management System',
@@ -159,8 +156,7 @@ export const projects: Project[] = [
     ],
     repo: 'https://github.com/hasan123dayoub-del/Institute-Management-System',
     image: 'projects/institute-admin.jpg',
-    live: 'https://institute-dashboard-gnsa.onrender.com',
-    liveNote: renderNote,
+    live: 'https://ascend-institute-dashboard.vercel.app',
   },
   {
     name: 'Alumni Network',
@@ -176,9 +172,8 @@ export const projects: Project[] = [
       'Covered the events, notifications and password features with Pest feature tests.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/Alumni-Network',
-    live: 'https://alumni-network-api-08ia.onrender.com',
-    liveNote: renderNote,
-    docs: 'https://alumni-network-api-08ia.onrender.com/docs/api',
+    live: 'https://alumni-network-hasan.vercel.app',
+    docs: 'https://alumni-network-hasan.vercel.app/docs/api',
   },
   {
     name: 'LazyRoom',
@@ -194,9 +189,8 @@ export const projects: Project[] = [
       'Built the entire backend on my own: customers, suppliers and admins, an order state machine, and wallet payments kept safe under concurrency with database transactions and row locking (pessimistic locking); measured with 20 parallel requests on one order (charged once) and 50 parallel requests across orders (never overdrawn).',
     ],
     repo: 'https://github.com/hasan123dayoub-del/LazyRoom',
-    live: 'https://lazyroom-api.onrender.com',
-    liveNote: renderNote,
-    docs: 'https://lazyroom-api.onrender.com/docs/api',
+    live: 'https://lazyroom-hasan.vercel.app',
+    docs: 'https://lazyroom-hasan.vercel.app/docs/api',
   },
   {
     name: 'NewsRoom',
@@ -212,9 +206,8 @@ export const projects: Project[] = [
       'Prevented cache stampedes with Redis atomic locks, rate-limited the API to 60 requests per minute, and scheduled monthly archiving and weekly report jobs.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/NewsRoom',
-    live: 'https://newsroom-api-rmwa.onrender.com',
-    liveNote: renderNote,
-    docs: 'https://newsroom-api-rmwa.onrender.com/docs/api',
+    live: 'https://newsroom-hasan.vercel.app',
+    docs: 'https://newsroom-hasan.vercel.app/docs/api',
   },
   {
     name: 'HireHub',
@@ -230,9 +223,8 @@ export const projects: Project[] = [
       'Cut the project listing from 48 to 5 queries per page (15 projects, measured) by eliminating N+1 queries with eager loading and withCount and cached admin analytics for 10 minutes.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/HireHub',
-    live: 'https://hirehub-api-dy61.onrender.com',
-    liveNote: renderNote,
-    docs: 'https://hirehub-api-dy61.onrender.com/docs/api',
+    live: 'https://hirehub-hasan.vercel.app',
+    docs: 'https://hirehub-hasan.vercel.app/docs/api',
   },
   {
     name: 'Property Management System',
@@ -249,8 +241,7 @@ export const projects: Project[] = [
       'My part: admin user management (create employees, change roles, activate and deactivate accounts), employee-to-customer booking messages, customer ratings, and property and booking reports.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/property-management',
-    live: 'https://property-management-xs68.onrender.com/login',
-    liveNote: renderNote,
+    live: 'https://property-management-hasan.vercel.app/login',
   },
 ]
 
