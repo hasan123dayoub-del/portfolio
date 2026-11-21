@@ -113,6 +113,10 @@ export interface Project {
   points: string[];
   repo: string;
   live?: string;
+  // Text for the live link (default 'Live demo'), e.g. when a project has several apps.
+  liveLabel?: string;
+  // More live links shown after the main one, e.g. an admin dashboard.
+  links?: { label: string; url: string }[];
   // Shown under the links, e.g. for free hosting that sleeps when idle.
   liveNote?: string;
   docs?: string;
@@ -140,6 +144,8 @@ export const projects: Project[] = [
     image: 'projects/rihlati-dashboard.jpg',
     imageCaption: 'Admin dashboard (Arabic UI)',
     live: 'https://rihlati-hasan.vercel.app',
+    liveLabel: 'Customer app',
+    links: [{ label: 'Dashboard', url: 'https://rihlati-dashboard-hasan.vercel.app' }],
   },
   {
     name: 'Movies Platform',

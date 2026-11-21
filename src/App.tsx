@@ -419,9 +419,14 @@ function App() {
                   <div className="project-links">
                     {p.live && (
                       <a className="link" href={p.live} target="_blank" rel="noreferrer">
-                        Live demo ↗
+                        {p.liveLabel ?? 'Live demo'} ↗
                       </a>
                     )}
+                    {p.links?.map((l) => (
+                      <a key={l.url} className="link" href={l.url} target="_blank" rel="noreferrer">
+                        {l.label} ↗
+                      </a>
+                    ))}
                     {p.docs && (
                       <a className="link" href={p.docs} target="_blank" rel="noreferrer">
                         API docs ↗
