@@ -6,18 +6,18 @@
     <style>
       @page { size: A4; margin: 12mm 14mm; }
       * { box-sizing: border-box; }
-      body { margin: 0; font: 10pt/1.38 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+      body { margin: 0; font: 10pt/1.3 'Segoe UI', Arial, sans-serif; color: #1f2937; }
       h1 { margin: 0; font-size: 26pt; color: #0f172a; letter-spacing: -0.5px; }
       .title { margin: 4px 0 8px; font-size: 12pt; font-weight: 600; color: #0e7490; }
       .contact { font-size: 9pt; color: #475569; line-height: 1.6; }
       .contact span + span::before { content: '|'; margin: 0 8px; color: #94a3b8; }
       header { padding-bottom: 10px; border-bottom: 3px solid #0f172a; }
       /* Plain, unspaced heading text so ATS parsers read each section name as a word. */
-      h2 { margin: 13px 0 5px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
+      h2 { margin: 11px 0 4px; padding-bottom: 3px; border-bottom: 1px solid #e2e8f0; font-size: 11.5pt; font-weight: 700; color: #0f172a; }
       h3 { margin: 0; font-size: 10.2pt; font-weight: 400; color: #0f172a; }
       p { margin: 0 0 4px; }
-      ul { margin: 3px 0 8px; padding-left: 16px; }
-      li { margin-bottom: 2px; }
+      ul { margin: 2px 0 6px; padding-left: 16px; }
+      li { margin-bottom: 1px; }
       .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
       .date { font-size: 9pt; color: #64748b; white-space: nowrap; }
       .item { margin-top: 6px; break-inside: avoid; }
@@ -39,7 +39,7 @@
     </header>
 
     <h2>Profile</h2>
-    <p>Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 118 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).</p>
+    <p>Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 118 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).</p>
 
     <h2>Technical Skills</h2>
     <p class="skill"><b>Backend:</b> PHP 8, Laravel, Node.js, TypeScript, Express.js, RESTful APIs, API versioning, OpenAPI (Swagger)</p>
@@ -52,7 +52,7 @@
     <h2>Professional Experience</h2>
     <div class="item">
       <div class="row"><h3><b>Full-Stack Developer Trainee</b> | Bytes4Future, Aga Khan Foundation (AKF) | On-site</h3><span class="date">Aug 2026 – Present</span></div>
-      <ul><li>Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.</li><li>Co-developed the Institute Management System (see Projects) with a team of 3: a Node.js REST API consumed by a 13-page React dashboard.</li><li>Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed on Vercel.</li></ul>
+      <ul><li>Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.</li><li>Co-developed 2 team projects (see Projects): the Institute Management System and Rihlati, which I led.</li><li>Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed on Vercel.</li></ul>
     </div>
     <div class="item">
       <div class="row"><h3><b>Backend Developer Trainee</b> | focal X | Remote</h3><span class="date">Sep 2025 – Aug 2026</span></div>
@@ -60,6 +60,11 @@
     </div>
 
     <h2>Selected Projects</h2>
+    <div class="item">
+      <div class="row"><h3><b>Rihlati | Bus Booking System</b> (Team of 3)</h3><span class="date">Nov 2026</span></div>
+      <div class="tech">TypeScript, Express 5, MongoDB, Next.js 16, React Native | github.com/hasan123dayoub-del/bus-booking-system | Live: rihlati-hasan.vercel.app</div>
+      <ul><li>Led the team of 3 and completed the 40-endpoint Express 5 + TypeScript API (JWT, 3 roles); an atomic update stops double booking (50 parallel requests for one seat: exactly 1 booking); built the Next.js dashboard; live on Vercel.</li></ul>
+    </div>
     <div class="item">
       <div class="row"><h3><b>Movies Platform | Full-Stack Platform</b> (Individual)</h3><span class="date">Nov 2026</span></div>
       <div class="tech">TypeScript, Node.js, PostgreSQL, Prisma, Next.js 16 | github.com/hasan123dayoub-del/movies-platform | Live: movies-platform-web.vercel.app | API docs: movies-platform-api.vercel.app/docs</div>

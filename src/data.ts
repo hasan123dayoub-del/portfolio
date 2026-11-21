@@ -17,14 +17,14 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 118 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 118 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 118 REST endpoints in total) and contributed to 3 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 118 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
   { value: '118', label: 'REST endpoints I built on my own' },
-  { value: '7', label: 'projects (4 built solo)' },
+  { value: '8', label: 'projects (4 built solo)' },
   { value: '14 mo', label: 'project-based training' },
   { value: '2', label: 'certified internship levels' },
 ]
@@ -53,7 +53,7 @@ export const services = [
     icon: 'layers',
     title: 'Full-stack web apps',
     text: 'A React or Next.js interface on top of the API, with admin dashboards, live search and pages that stay fast.',
-    proof: 'Movies Platform · Institute',
+    proof: 'Movies Platform · Institute · Rihlati',
   },
   {
     icon: 'database',
@@ -83,7 +83,7 @@ export const experience = [
     period: 'Aug 2026 – Present',
     points: [
       'Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.',
-      'Co-developed the Institute Management System (see Projects) with a team of 3: a Node.js REST API consumed by a 13-page React dashboard.',
+      'Co-developed 2 team projects (see Projects): the Institute Management System and Rihlati, which I led.',
       'Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed on Vercel.',
     ],
   },
@@ -125,6 +125,22 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: 'Rihlati',
+    subtitle: 'Bus Booking System',
+    kind: 'Team of 3',
+    date: 'Nov 2026',
+    tech: ['TypeScript', 'Express 5', 'MongoDB', 'Next.js 16', 'React Native'],
+    summary:
+      'Intercity bus booking: a customer app, a reception desk and an admin dashboard on one API. 50 parallel requests for the same seat book it exactly once.',
+    points: [
+      'Led the team of 3 and completed the 40-endpoint Express 5 + TypeScript API (JWT, 3 roles); an atomic update stops double booking (50 parallel requests for one seat: exactly 1 booking); built the Next.js dashboard; live on Vercel.',
+    ],
+    repo: 'https://github.com/hasan123dayoub-del/bus-booking-system',
+    image: 'projects/rihlati-dashboard.jpg',
+    imageCaption: 'Admin dashboard (Arabic UI)',
+    live: 'https://rihlati-hasan.vercel.app',
+  },
   {
     name: 'Movies Platform',
     subtitle: 'Full-Stack Platform',
