@@ -37,7 +37,7 @@ export const skills = [
   },
   { group: 'Security', items: ['Laravel Sanctum', 'JWT', 'RBAC', 'Policies', 'Form Request', 'Zod'] },
   { group: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Prisma', 'Transactions'] },
-  { group: 'Frontend', items: ['JavaScript (ES6+)', 'React', 'Next.js', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
+  { group: 'Frontend & Mobile', items: ['JavaScript (ES6+)', 'React', 'Next.js', 'React Native (Expo)', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
   { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Vercel', 'Git', 'GitHub Actions (CI)'] },
 ]
 
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     summary:
       'Intercity bus booking: a customer app, a reception desk and an admin dashboard on one API. 50 parallel requests for the same seat book it exactly once.',
     points: [
-      'Led the team of 3 and completed the 40-endpoint Express 5 + TypeScript API (JWT, 3 roles); an atomic update stops double booking (50 parallel requests for one seat: exactly 1 booking); built the Next.js dashboard; live on Vercel.',
+      'Led the team of 3 and wrote 83% of the final code: the 40-endpoint Express 5 + TypeScript API (JWT, 3 roles), the Next.js dashboard and most of the Expo app; an atomic update stops double booking (50 parallel requests for one seat: exactly 1 booking).',
     ],
     repo: 'https://github.com/hasan123dayoub-del/bus-booking-system',
     image: 'projects/rihlati-dashboard.jpg',
