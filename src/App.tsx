@@ -221,7 +221,7 @@ function App() {
               {profile.title} <span className="muted">| {profile.stack}</span>
             </p>
             <p className="lead">
-              I build clean, well-tested REST APIs with Laravel and Node.js, and React interfaces on top of them.
+              I build clean, well-tested REST APIs with Laravel, NestJS and Node.js, and React and Next.js interfaces on top of them.
             </p>
             <div className="actions">
               <a className="btn primary" href="#projects">

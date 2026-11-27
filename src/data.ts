@@ -5,7 +5,7 @@ export const profile = {
   title: 'Backend-focused Full-Stack Developer',
   // Used only on the CV.
   cvTitle: 'Backend-focused Full-Stack Developer',
-  stack: 'Laravel · Node.js · TypeScript · React · Next.js',
+  stack: 'Laravel · Node.js · NestJS · TypeScript · React · Next.js',
   availability: 'Available now for part-time work and full-time from Aug 2027 (remote or on-site; open to relocation).',
   location: 'Damascus, Syria',
   email: 'hasan123dayoub@gmail.com',
@@ -38,7 +38,7 @@ export const skills = [
   { group: 'Security', items: ['Laravel Sanctum', 'JWT', 'RBAC', 'Policies', 'Form Request', 'Zod'] },
   { group: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Eloquent ORM', 'Prisma', 'Transactions'] },
   { group: 'Frontend & Mobile', items: ['JavaScript (ES6+)', 'React', 'Next.js', 'React Native (Expo)', 'Tailwind CSS', 'Blade', 'HTML5', 'CSS3'] },
-  { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Postman', 'Docker', 'Vercel', 'Git', 'GitHub Actions (CI)'] },
+  { group: 'Testing & DevOps', items: ['Pest', 'PHPUnit', 'Vitest', 'Jest', 'Postman', 'Docker', 'Vercel', 'Git', 'GitHub Actions (CI)'] },
 ]
 
 // What I can build for a team or a client. `icon` is a key of serviceIcons in components/Icons.tsx.
@@ -46,7 +46,7 @@ export const services = [
   {
     icon: 'server',
     title: 'Backend & REST APIs',
-    text: 'Secure, well-structured APIs in Laravel or Node.js/TypeScript: authentication, roles, validation, versioning and clear error responses.',
+    text: 'Secure, well-structured APIs in Laravel or Node.js/TypeScript (NestJS, Express): authentication, roles, validation, versioning and clear error responses.',
     proof: 'TakeMeHigh · HireHub · NewsRoom · LazyRoom',
   },
   {
@@ -65,12 +65,13 @@ export const services = [
     icon: 'shield',
     title: 'Testing, docs & deployment',
     text: 'Automated tests in CI, interactive OpenAPI docs and cloud deployments (Vercel, Docker), so every feature is checked, documented and live.',
-    proof: 'Pest · Vitest · Swagger · Vercel · Docker',
+    proof: 'Pest · Vitest · Jest · Swagger · Vercel · Docker',
   },
 ] as const
 
 // What you are learning right now. Add one line per topic, newest first.
 export const learning = [
+  { topic: 'NestJS', since: 'Nov 2026', note: 'TakeMeHigh' },
   { topic: 'Next.js & TypeScript', since: 'Nov 2026', note: 'Full-stack TypeScript' },
   { topic: 'English', since: 'Aug 2026', note: 'Started in the Bytes4Future English track' },
 ]
