@@ -147,6 +147,8 @@ export const projects: Project[] = [
     image: 'projects/takemehigh-dashboard.jpg',
     imageCaption: 'Admin dashboard (Arabic UI)',
     live: 'https://takemehigh-hasan.vercel.app',
+    liveLabel: 'Public site',
+    links: [{ label: 'Dashboard login', url: 'https://takemehigh-hasan.vercel.app/login' }],
     docs: 'https://takemehigh-api-hasan.vercel.app/api/docs',
   },
   {
