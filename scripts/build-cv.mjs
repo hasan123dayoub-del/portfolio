@@ -81,6 +81,7 @@ const html = `<!doctype html>
 
     <h2>Selected Projects</h2>
     ${projects
+      .filter((p) => p.cv !== false)
       .map(
         (p) => `<div class="item">
       <div class="row"><h3><b>${esc(p.name)} | ${esc(p.subtitle)}</b> (${esc(p.kind)})</h3><span class="date">${esc(p.date)}</span></div>

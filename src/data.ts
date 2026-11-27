@@ -17,20 +17,20 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, Express, React, Next.js). I built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform, 118 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, NestJS, Express, React, Next.js). I built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
   cvSummary:
-    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 4 projects on my own (3 Laravel APIs and a full-stack TypeScript platform with Next.js and PostgreSQL, 118 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms with NestJS or Express, Next.js and PostgreSQL, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
-  { value: '118', label: 'REST endpoints I built on my own' },
-  { value: '8', label: 'projects (4 built solo)' },
+  { value: '283', label: 'REST endpoints I built on my own' },
+  { value: '9', label: 'projects (5 built solo)' },
   { value: '14 mo', label: 'project-based training' },
   { value: '2', label: 'certified internship levels' },
 ]
 
 export const skills = [
-  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'TypeScript', 'Express.js', 'RESTful APIs', 'API versioning', 'OpenAPI (Swagger)'] },
+  { group: 'Backend', items: ['PHP 8', 'Laravel', 'Node.js', 'TypeScript', 'Express.js', 'NestJS', 'RESTful APIs', 'API versioning', 'OpenAPI (Swagger)'] },
   {
     group: 'Architecture',
     items: ['OOP', 'MVC', 'SOLID', 'Repository & Service patterns', 'Events', 'Queues & jobs', 'Cron scheduling', 'WebSockets (Pusher)'],
@@ -47,13 +47,13 @@ export const services = [
     icon: 'server',
     title: 'Backend & REST APIs',
     text: 'Secure, well-structured APIs in Laravel or Node.js/TypeScript: authentication, roles, validation, versioning and clear error responses.',
-    proof: 'HireHub · NewsRoom · LazyRoom',
+    proof: 'TakeMeHigh · HireHub · NewsRoom · LazyRoom',
   },
   {
     icon: 'layers',
     title: 'Full-stack web apps',
     text: 'A React or Next.js interface on top of the API, with admin dashboards, live search and pages that stay fast.',
-    proof: 'Movies Platform · Institute · Rihlati',
+    proof: 'TakeMeHigh · Movies Platform · Rihlati',
   },
   {
     icon: 'database',
@@ -126,9 +126,28 @@ export interface Project {
   imageCaption?: string;
   // Card cover for projects without a screenshot: a real request and what the API answers.
   terminal?: { request: string; response: string };
+  // false = shown on the site but left off the CV (keeps the CV to 2 pages)
+  cv?: boolean;
 }
 
 export const projects: Project[] = [
+  {
+    name: 'TakeMeHigh',
+    subtitle: 'Travel Agency System',
+    kind: 'Individual',
+    date: 'Nov 2026',
+    tech: ['NestJS 12', 'TypeScript', 'Prisma', 'PostgreSQL', 'Next.js 16'],
+    summary:
+      'Travel agency system built solo: a 165-endpoint NestJS + Prisma API and a 44-page Next.js dashboard with a public site. 12 simultaneous bookings on 5 seats confirm exactly 5.',
+    points: [
+      'Built solo a 165-endpoint NestJS 12 + Prisma API over 45 PostgreSQL models (rotating JWT refresh tokens, 4 roles, branch scoping, database triggers) and a 44-page Next.js dashboard; 62 tests in CI, live on Vercel.',
+    ],
+    repo: 'https://github.com/hasan123dayoub-del/TakeMeHigh',
+    image: 'projects/takemehigh-dashboard.jpg',
+    imageCaption: 'Admin dashboard (Arabic UI)',
+    live: 'https://takemehigh-hasan.vercel.app',
+    docs: 'https://takemehigh-api-hasan.vercel.app/api/docs',
+  },
   {
     name: 'Rihlati',
     subtitle: 'Bus Booking System',
@@ -263,6 +282,7 @@ export const projects: Project[] = [
       'My part: admin user management (create employees, change roles, activate and deactivate accounts), employee-to-customer booking messages, customer ratings, and property and booking reports.',
     ],
     repo: 'https://github.com/hasan123dayoub-del/property-management',
+    cv: false,
     live: 'https://property-management-hasan.vercel.app/login',
   },
 ]
