@@ -17,16 +17,16 @@ export const profile = {
   // Leave empty to fall back to opening the visitor's mail app.
   contactAccessKey: 'ea64e7ac-6878-4cf8-b3a4-1b3f5dc6fad7',
   summary:
-    'Backend-focused full-stack developer with 14 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, NestJS, Express, React, Next.js). I built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation).',
+    'Backend-focused full-stack developer with 16 months of project-based training in PHP/Laravel and JavaScript/TypeScript (Node.js, NestJS, Express, React, Next.js). I built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Completed the 4-month on-site Bytes4Future program (Aga Khan Foundation), certified as a Junior Full Stack Developer.',
   cvSummary:
-    'Junior backend-focused full-stack developer with 14 months of project-based training in Laravel and Node.js/TypeScript/React. Built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms with NestJS or Express, Next.js and PostgreSQL, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Currently training on-site at Bytes4Future (Aga Khan Foundation). Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
+    'Junior backend-focused full-stack developer with 16 months of project-based training in Laravel and Node.js/TypeScript/React. Built 5 projects on my own (3 Laravel APIs and 2 full-stack TypeScript platforms with NestJS or Express, Next.js and PostgreSQL, 283 REST endpoints in total) and contributed to 4 more team projects, using layered architectures, Sanctum/JWT authentication, role-based access control, queued jobs, Redis caching, Docker and automated tests. Completed the 4-month on-site Bytes4Future program (Aga Khan Foundation), certified as a Junior Full Stack Developer. Seeking a junior backend or full-stack role: available now part-time, full-time from Aug 2027 (remote or on-site; open to relocation).',
 }
 
 export const stats = [
   { value: '283', label: 'REST endpoints I built on my own' },
   { value: '9', label: 'projects (5 built solo)' },
-  { value: '14 mo', label: 'project-based training' },
-  { value: '2', label: 'certified internship levels' },
+  { value: '16 mo', label: 'project-based training' },
+  { value: '3', label: 'training certificates' },
 ]
 
 export const skills = [
@@ -72,7 +72,7 @@ export const services = [
 // What you are learning right now. Add one line per topic, newest first.
 export const learning = [
   { topic: 'Next.js & TypeScript', since: 'Nov 2026', note: 'Full-stack TypeScript' },
-  { topic: 'English', since: 'Aug 2026', note: 'Bytes4Future English track' },
+  { topic: 'English', since: 'Aug 2026', note: 'Started in the Bytes4Future English track' },
 ]
 
 export const experience = [
@@ -80,9 +80,9 @@ export const experience = [
     role: 'Full-Stack Developer Trainee',
     company: 'Bytes4Future, Aga Khan Foundation (AKF)',
     mode: 'On-site',
-    period: 'Aug 2026 – Present',
+    period: 'Aug – Dec 2026',
     points: [
-      'Training across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English.',
+      'Completed a 4-month intensive program across 3 parallel tracks: full-stack development (JavaScript, TypeScript, Node.js, Express.js, React, Next.js, PostgreSQL), Soft Skills and Business, and English; certified as a Junior Full Stack Developer.',
       'Co-developed 2 team projects (see Projects): the Institute Management System and Rihlati, which I led.',
       'Applied the track on my own in the Movies Platform (see Projects): a TypeScript API with Prisma and PostgreSQL behind a Next.js site, deployed on Vercel.',
     ],
@@ -290,6 +290,11 @@ export const projects: Project[] = [
 // Dates and IDs are as printed on the certificates and recommendation letters.
 export const certifications = [
   {
+    name: 'Bytes4Future Full-Stack Development Program',
+    detail: 'Aga Khan Foundation (AKF) · 4-month on-site program (Aug – Dec 2026), certified as a Junior Full Stack Developer, with Life Skills, Business and English training',
+    date: 'Dec 2026',
+  },
+  {
     name: 'focal X Backend Internship, Levels 1 & 2',
     detail: 'Two 4-month tracks · certified by the American Institute for Applied Education (AIAE, CertiPro), Passed with Distinction',
     date: 'Aug 2026',
@@ -306,5 +311,5 @@ export const education = {
 
 export const languages = [
   { name: 'Arabic', level: 'Native' },
-  { name: 'English', level: 'B1, actively improving through the Bytes4Future English track' },
+  { name: 'English', level: 'B1, improved through the Bytes4Future English track and still practising' },
 ]
